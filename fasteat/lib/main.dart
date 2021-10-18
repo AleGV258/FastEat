@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Material App',
+      title: 'FastEat',
       initialRoute: 'pantalla_inicial',
       routes: {
         'pantalla_inicial': (BuildContext context) => PantallaInicial(),
