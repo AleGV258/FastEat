@@ -183,7 +183,7 @@ class Contenido extends StatelessWidget {
           SizedBox(height: 30),
           Expanded(child: Container()), //Separar
           //Text('FastEat', style: TextStyle(color: Colors.red, fontSize: 70)),
-          Image(image: AssetImage('assets/Logo.png'), height: 300),
+          Image(image: AssetImage('assets/Logo3.png'), height: 300),
           Expanded(child: Container()), //Separar
           Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white),
         ],
