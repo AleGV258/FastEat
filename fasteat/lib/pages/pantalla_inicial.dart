@@ -10,13 +10,10 @@ class PantallaInicial extends StatelessWidget {
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+            begin: Alignment.topLeft,
+            end: Alignment.topRight,
             //stops: [0.5, 0.5],
-            colors: [
-              Color(0xff5EE8C5),
-              Color(0xff30BAD6),
-            ],
+            colors: [Colors.red, Colors.orange],
           ),
         ),
         child: PageView(
@@ -25,7 +22,7 @@ class PantallaInicial extends StatelessWidget {
           //widget que lo que tiene adentro es como un scroll Pageview
           children: [
             Pagina1(),
-            Pagina2(),
+            Login(),
           ],
         ),
       ),
@@ -33,27 +30,69 @@ class PantallaInicial extends StatelessWidget {
   }
 }
 
-class Pagina2 extends StatelessWidget {
-  const Pagina2({Key? key}) : super(key: key);
+class Login extends StatelessWidget {
+  const Login({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xff30BAD6),
-      child: Center(
-        child: TextButton(
-          onPressed: () {},
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
-            child: Text('Bienvenido',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
-                )),
-          ),
-          style: TextButton.styleFrom(
-            backgroundColor: Color(0xff0092FA2),
-            shape: StadiumBorder(),
-          ),
+      color: Colors.white,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image(image: AssetImage('assets/Logo.png'), height: 250),
+          SizedBox(height: 15.0),
+          _correo(),
+          SizedBox(height: 15.0),
+          _contrasena(),
+          SizedBox(height: 15.0),
+          _iniciarSesion(),
+          //SizedBox(height: 15.0),
+        ],
+      ),
+    );
+  }
+
+  Widget _correo() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 35.0),
+      child: TextField(
+        keyboardType: TextInputType.emailAddress,
+        decoration: InputDecoration(
+          icon: Icon(Icons.email),
+          hintText: 'ejemplo@correo.com',
+          labelText: 'Correo Electrónico:',
+        ),
+        onChanged: (value) {},
+      ),
+    );
+  }
+
+  Widget _contrasena() {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 35.0),
+      child: TextField(
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          icon: Icon(Icons.password),
+          hintText: 'Contraseña',
+          labelText: 'Contraseña:',
+        ),
+        onChanged: (value) {},
+      ),
+    );
+  }
+
+  Widget _iniciarSesion() {
+    return ElevatedButton(
+      onPressed: () {}, //aqui realizar la comprobacion
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
+        child: Text('Iniciar Sesión', style: TextStyle(fontSize: 17.0)),
+      ),
+      style: ElevatedButton.styleFrom(
+        primary: Colors.red,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
         ),
       ),
     );
@@ -82,41 +121,49 @@ class Fondo extends StatelessWidget {
       height: double.infinity,
       width: double.infinity,
       child: Opacity(
-        opacity: 0.5,
+        opacity: 0.4,
         child: _generarFondo(),
       ),
     );
-      // child: Opacity(
-      //   
-      //   child: FittedBox(
-      //     fit: BoxFit.fill,
-      //   )
-      // ),
+    // child: Opacity(
+    //
+    //   child: FittedBox(
+    //     fit: BoxFit.fill,
+    //   )
+    // ),
   }
-  
+
   //Función para generar uno de los posibles backgrounds para la pantalla de bienvenida
   Widget? _generarFondo() {
     int min = 0;
     int max = 7;
     final random = new Random();
     final rnd = min + random.nextInt(max - min);
-    switch (rnd){
+    switch (rnd) {
       case 0:
-        return Image(image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
       case 1:
-        return Image(image: AssetImage('assets/pantallaInicio1.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio1.png'), fit: BoxFit.cover);
       case 2:
-        return Image(image: AssetImage('assets/pantallaInicio2.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio2.png'), fit: BoxFit.cover);
       case 3:
-        return Image(image: AssetImage('assets/pantallaInicio3.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio3.png'), fit: BoxFit.cover);
       case 4:
-        return Image(image: AssetImage('assets/pantallaInicio4.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio4.png'), fit: BoxFit.cover);
       case 5:
-        return Image(image: AssetImage('assets/pantallaInicio5.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio5.png'), fit: BoxFit.cover);
       case 6:
-        return Image(image: AssetImage('assets/pantallaInicio6.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio6.png'), fit: BoxFit.cover);
       case 7:
-        return Image(image: AssetImage('assets/pantallaInicio7.png'), fit: BoxFit.cover);
+        return Image(
+            image: AssetImage('assets/pantallaInicio7.png'), fit: BoxFit.cover);
     }
   }
 }
@@ -134,12 +181,13 @@ class Contenido extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 30),
-          Text('FastEat', style: TextStyle(color: Colors.red, fontSize: 70)),
-          Expanded(child: Container()),
+          Expanded(child: Container()), //Separar
+          //Text('FastEat', style: TextStyle(color: Colors.red, fontSize: 70)),
+          Image(image: AssetImage('assets/Logo.png'), height: 300),
+          Expanded(child: Container()), //Separar
           Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white),
         ],
       ),
     );
   }
 }
-
