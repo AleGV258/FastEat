@@ -14,16 +14,20 @@ class MenuAbajo extends StatelessWidget {
       currentIndex: 0,
       items: [
         BottomNavigationBarItem(
-          icon: Icon(Icons.access_alarms),
-          label: 'Hola mundo',
+          icon: Icon(Icons.list),
+          label: 'Categorias',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.safety_divider),
-          label: 'Hola mundo',
+          icon: Icon(Icons.favorite),
+          label: 'Favoritos',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.g_mobiledata_rounded),
-          label: 'Hola mundo',
+          icon: Icon(Icons.account_circle),
+          label: 'Perfil',
+        ),
+        BottomNavigationBarItem(
+          icon: Icon(Icons.shopping_cart),
+          label: 'Carrito',
         ),
       ],
     );

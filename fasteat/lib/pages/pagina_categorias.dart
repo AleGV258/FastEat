@@ -1,5 +1,5 @@
 import 'package:fasteat/widgets/menu_abajo.dart';
-import 'package:fasteat/widgets/tabla_tarjetas.dart';
+import 'package:fasteat/widgets/clasificaciones_comida.dart';
 import 'package:flutter/material.dart';
 
 class PaginaCategorias extends StatelessWidget {
@@ -8,6 +8,11 @@ class PaginaCategorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          title: Text('Clasificación'),
+          centerTitle: true,
+          backgroundColor: Colors.red,
+        ),
         body: Stack(
           children: [
             _Body(),
@@ -25,9 +30,8 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [CardTable()],
+        children: [CategoriasPlatillos()],
       ),
     );
   }
 }
-//Somos el equipo 7

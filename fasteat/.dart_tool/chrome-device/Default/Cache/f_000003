@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "gaSjNbULWzA2JR9WTPdGPg==";
+    window.$dartAppId = "/jJO5dwv24eZQfuviU+8Xg==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:55084/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:62144/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:55086/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:62146/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -438,7 +438,11 @@ let modulePaths = {
  "packages/flutter/src/material/arc.dart": "packages/flutter/src/material/arc.dart.lib",
  "packages/flutter/src/material/app.dart": "packages/flutter/src/material/app.dart.lib",
  "packages/flutter/src/material/animated_icons.dart": "packages/flutter/src/material/animated_icons.dart.lib",
- "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib"
+ "packages/flutter/src/material/about.dart": "packages/flutter/src/material/about.dart.lib",
+ "packages/fasteat/pages/pantalla_inicial.dart": "packages/fasteat/pages/pantalla_inicial.dart.lib",
+ "packages/fasteat/pages/pagina_categorias.dart": "packages/fasteat/pages/pagina_categorias.dart.lib",
+ "packages/fasteat/widgets/tabla_tarjetas.dart": "packages/fasteat/widgets/tabla_tarjetas.dart.lib",
+ "packages/fasteat/widgets/menu_abajo.dart": "packages/fasteat/widgets/menu_abajo.dart.lib"
 };
 let moduleNames = {
  "web_entrypoint.dart.lib": "web_entrypoint.dart",
@@ -798,7 +802,11 @@ let moduleNames = {
  "packages/flutter/src/material/arc.dart.lib": "packages/flutter/src/material/arc.dart",
  "packages/flutter/src/material/app.dart.lib": "packages/flutter/src/material/app.dart",
  "packages/flutter/src/material/animated_icons.dart.lib": "packages/flutter/src/material/animated_icons.dart",
- "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart"
+ "packages/flutter/src/material/about.dart.lib": "packages/flutter/src/material/about.dart",
+ "packages/fasteat/pages/pantalla_inicial.dart.lib": "packages/fasteat/pages/pantalla_inicial.dart",
+ "packages/fasteat/pages/pagina_categorias.dart.lib": "packages/fasteat/pages/pagina_categorias.dart",
+ "packages/fasteat/widgets/tabla_tarjetas.dart.lib": "packages/fasteat/widgets/tabla_tarjetas.dart",
+ "packages/fasteat/widgets/menu_abajo.dart.lib": "packages/fasteat/widgets/menu_abajo.dart"
 };
 if(!window.$requireLoader) {
    window.$requireLoader = {

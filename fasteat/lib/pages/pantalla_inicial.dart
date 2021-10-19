@@ -172,10 +172,7 @@ class Contenido extends StatelessWidget {
   const Contenido({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    var textStyle = TextStyle(
-        fontSize: 60, fontWeight: FontWeight.bold, color: Colors.white);
     return SafeArea(
-      //bottom: false,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
