@@ -1,5 +1,5 @@
 import 'package:fasteat/widgets/menu_abajo.dart';
-import 'package:fasteat/widgets/clasificaciones_comida.dart';
+import 'package:fasteat/widgets/categorias_comida.dart';
 import 'package:flutter/material.dart';
 
 class PaginaCategorias extends StatelessWidget {
