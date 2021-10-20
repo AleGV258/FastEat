@@ -19,16 +19,16 @@ define("main_module.bootstrap", ["web_entrypoint.dart", "dart_sdk"], function(ap
          main();
       });
     }
-    window.$dartAppId = "54Oh/kOmgSvu2ruJmKci4Q==";
+    window.$dartAppId = "XntCWmA+KDBh7+zLFDWDRg==";
 window.$dartReloadConfiguration = "ReloadConfiguration.none";
 window.$dartModuleStrategy = "require-js";
 window.$loadModuleConfig = require;
 window.$dwdsVersion = "11.0.2";
-window.$dwdsDevHandlerPath = "http://localhost:50213/$dwdsSseHandler";
+window.$dwdsDevHandlerPath = "http://localhost:61203/$dwdsSseHandler";
 window.$dwdsEnableDevtoolsLaunch = true;
 window.$dartEntrypointPath = "main_module.bootstrap.js";
 window.$requireLoader.forceLoadModule("dwds/src/injected/client");
-window.$dartExtensionUri = "http://127.0.0.1:50216/$debug";
+window.$dartExtensionUri = "http://127.0.0.1:61205/$debug";
 
   } else {
     if(window.$dartMainExecuted){
@@ -443,6 +443,7 @@ let modulePaths = {
  "packages/fasteat/pages/pantalla_inicial.dart": "packages/fasteat/pages/pantalla_inicial.dart.lib",
  "packages/fasteat/pages/pagina_categorias.dart": "packages/fasteat/pages/pagina_categorias.dart.lib",
  "packages/fasteat/widgets/categorias_comida.dart": "packages/fasteat/widgets/categorias_comida.dart.lib",
+ "packages/fasteat/providers/menu_provider.dart": "packages/fasteat/providers/menu_provider.dart.lib",
  "packages/fasteat/widgets/menu_abajo.dart": "packages/fasteat/widgets/menu_abajo.dart.lib"
 };
 let moduleNames = {
@@ -808,6 +809,7 @@ let moduleNames = {
  "packages/fasteat/pages/pantalla_inicial.dart.lib": "packages/fasteat/pages/pantalla_inicial.dart",
  "packages/fasteat/pages/pagina_categorias.dart.lib": "packages/fasteat/pages/pagina_categorias.dart",
  "packages/fasteat/widgets/categorias_comida.dart.lib": "packages/fasteat/widgets/categorias_comida.dart",
+ "packages/fasteat/providers/menu_provider.dart.lib": "packages/fasteat/providers/menu_provider.dart",
  "packages/fasteat/widgets/menu_abajo.dart.lib": "packages/fasteat/widgets/menu_abajo.dart"
 };
 if(!window.$requireLoader) {

@@ -1,0 +1,17 @@
+{
+    "nombreApp" : "Componentes",
+    "rutas" : [
+        {
+            "imagen" : "assets/Logo3.png",
+            "icon" : "fastfood",
+            "color": "white",
+            "texto": "Comida Rápida"
+        },
+        {
+            "imagen" : "assets/Logo3.png",
+            "icon" : "food_bank",
+            "color": "white",
+            "texto": "Restaurantes"
+        }
+    ]
+}

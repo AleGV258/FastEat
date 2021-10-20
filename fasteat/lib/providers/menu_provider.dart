@@ -16,4 +16,4 @@ class _GetICategorias {
   }
 }
 
-final menuProvider = new _GetICategorias(); //la convierte a publica la clase
+final categorias = new _GetICategorias(); //la convierte a publica la clase
