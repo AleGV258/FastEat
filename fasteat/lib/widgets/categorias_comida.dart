@@ -25,40 +25,11 @@ class CategoriasPlatillos extends StatelessWidget {
                 color: Colors.white,
                 texto: 'Restaurantes',
               ),
-              //_categorias(),
             ],
           ),
         ],
       ),
     );
-  }
-
-  Widget _categorias() {
-    return FutureBuilder(
-      future: categorias.cargarData(),
-      initialData: [],
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        return Table(
-          children: _categoria(snapshot.data, context),
-        );
-      },
-    );
-  }
-
-  TableRow _categoria(List<dynamic>? data, BuildContext context) {
-    final TableRow opciones = [];
-    data?.forEach((op) {
-      final widgetTemporal = _Categoria(
-        imagen: Image(image: AssetImage('assets/Logo3.png'), height: 300),
-        icon: Icons.food_bank,
-        color: Colors.white,
-        texto: 'Restaurantes',
-        // title: Text(op['texto']),
-        // //leading: getIcon(op['icon']),
-      );
-      opciones..add(widgetTemporal)..add(Divider());
-    });
-    return opciones;
   }
 }
 

@@ -9,7 +9,8 @@ class _GetICategorias {
     cargarData();
   }
   Future<List<dynamic>> cargarData() async {
-    final resp = await rootBundle.loadString('data/categorias.json');
+    final resp = await rootBundle.loadString('data/archivo.json');
+    //usaremos un archivo json
     Map dataMap = json.decode(resp);
     opciones = dataMap['rutas'];
     return opciones;
