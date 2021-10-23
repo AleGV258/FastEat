@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class CategoriasPlatillos extends StatelessWidget {
   const CategoriasPlatillos({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,24 +12,53 @@ class CategoriasPlatillos extends StatelessWidget {
             children: [
               _Categoria(
                 imagen:
-                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.fastfood,
                 color: Colors.white,
                 texto: 'Comida Rápida',
               ),
               _Categoria(
                 imagen:
-                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.food_bank,
                 color: Colors.white,
                 texto: 'Restaurantes',
               ),
+              //_categorias(),
             ],
           ),
         ],
       ),
     );
   }
+
+  Widget _categorias() {
+    return FutureBuilder(
+      future: categorias.cargarData(),
+      initialData: [],
+      builder: (BuildContext context, AsyncSnapshot snapshot) {
+        return Table(
+          //children: _categoria(snapshot.data, context),
+        );
+      },
+    );
+  }
+
+  // TableRow _categoria(List<dynamic>? data, BuildContext context) {
+  //   final TableRow opciones = [];
+  //   data?.forEach((op) {
+  //     final widgetTemporal = _Categoria(
+  //       imagen: Image(image: AssetImage('assets/Logo3.png'), height: 300),
+  //       icon: Icons.food_bank,
+  //       color: Colors.white,
+  //       texto: 'Restaurantes',
+  //       // title: Text(op['texto']),
+  //       // //leading: getIcon(op['icon']),
+  //     );
+  //     //opciones..add(widgetTemporal)..add(Divider());
+  //   });
+  //   return opciones;
+  // }
 }
 
 class _Categoria extends StatelessWidget {
@@ -45,7 +73,6 @@ class _Categoria extends StatelessWidget {
       required this.color,
       required this.texto})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
