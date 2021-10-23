@@ -7,11 +7,6 @@ class PaginaPlatillo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Categoria Nombre'),
-        centerTitle: true,
-        backgroundColor: Colors.red,
-      ),
       body: Stack(
         children: [
           _Body(),

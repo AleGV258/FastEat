@@ -1,6 +1,7 @@
 // import 'package:fasteat/pages/pagina_categorias.dart';
 // import 'package:fasteat/pages/pantalla_inicial.dart';
 import 'package:fasteat/pages/pagina_categorias.dart';
+import 'package:fasteat/pages/pagina_platillo.dart';
 import 'package:fasteat/pages/pantalla_inicial.dart';
 import 'package:fasteat/pages/pantalla_login.dart';
 import 'package:fasteat/pages/pantalla_registro.dart';
@@ -17,5 +18,6 @@ Map<String, WidgetBuilder> getRoutes() {
     'categoria': (BuildContext context) => PaginaCategorias(),
     'platillosPorCategoria': (BuildContext context) =>
         PaginaPlatillosXCategoria(),
+    'platillo': (BuildContext context) => PaginaPlatillo(),
   };
 }
