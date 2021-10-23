@@ -1,0 +1,20 @@
+{
+    "nombreApp" : "FastEat",
+    "rutas" : [
+        {
+            "ruta" : "login",
+            "icon" : "edit_outlined",
+            "texto" : "Login"
+        },
+        {
+            "ruta" : "registro",
+            "icon" : "edit_outlined",
+            "texto" : "Registro"
+        },
+        {
+            "ruta" : "inicial",
+            "icon" : "edit_outlined",
+            "texto" : "Inicial"
+        }
+    ]
+}

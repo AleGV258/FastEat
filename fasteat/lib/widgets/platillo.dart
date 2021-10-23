@@ -14,10 +14,27 @@ class Platillo extends StatelessWidget {
           titulo(),
           seccionBotones(),
           Container(
-            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
-                'Aliquip officia velit reprehenderit enim incididunt eiusmod culpa dolor ipsum nulla nulla enim dolor. Ullamco cillum officia amet officia ullamco nostrud non pariatur aliquip ut cupidatat duis voluptate voluptate. Ipsum duis culpa pariatur elit esse anim. Esse sint commodo Lorem occaecat amet consectetur dolor labore sit exercitation. Sint Lorem mollit magna occaecat ea.'),
+              'Descripción',
+              style: TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
           ),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: Text(
+              'Aliquip officia velit reprehenderit enim incididunt eiusmod culpa dolor ipsum nulla nulla enim dolor. Ullamco cillum officia amet officia ullamco nostrud non pariatur aliquip ut cupidatat duis voluptate voluptate. Ipsum duis culpa pariatur elit esse anim. Esse sint commodo Lorem occaecat amet consectetur dolor labore sit exercitation. Sint Lorem mollit magna occaecat ea.',
+              textAlign: TextAlign.center,
+            ),
+            // decoration: BoxDecoration(
+            //   borderRadius: BorderRadius.circular(10),
+            //   border: Border.all(color: Colors.grey),
+            // ),
+          ),
+          comentarios(),
         ],
       ),
     );
@@ -36,9 +53,10 @@ class seccionBotones extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          BotonPersonalizado(icon: Icons.call, texto: 'Call'),
-          BotonPersonalizado(icon: Icons.map_sharp, texto: 'Route'),
-          BotonPersonalizado(icon: Icons.share, texto: 'Share'),
+          //BotonPersonalizado(icon: Icons.call, texto: 'Call'),
+          BotonPersonalizado(icon: Icons.star, texto: 'Calificar'),
+          //Expanded(child: Container()),
+          BotonPersonalizado(icon: Icons.favorite, texto: 'Agregar a favorito'),
         ],
       ),
     );
@@ -77,14 +95,38 @@ class titulo extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Hola mundo 1',
-                  style: TextStyle(fontWeight: FontWeight.bold)),
-              Text('Hola mundo 2', style: TextStyle(color: Colors.black38)),
+              Text(
+                'Nombre del platillo',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+              ),
+              //Text('Precio', style: TextStyle(fontSize: 25)),
             ],
           ),
           Expanded(child: Container(height: 10)),
-          Icon(Icons.star, color: Colors.red),
-          Text('41'),
+          Text('\$ 234.432', style: TextStyle(color: Colors.red, fontSize: 25)),
+        ],
+      ),
+    );
+  }
+}
+
+class comentarios extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: Text(
+              'Comentarios',
+              style: TextStyle(
+                fontSize: 17.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          //Aqui van los comentarios
         ],
       ),
     );

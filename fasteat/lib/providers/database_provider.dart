@@ -20,7 +20,6 @@ class DBProvider {
   Future initDB() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
     final path = join(documentDirectory.path, 'scansdb.db');
-    print(path);
     return await openDatabase(
       path,
       version: 2,
@@ -35,6 +34,29 @@ class DBProvider {
           numeroTel INTEGER
         );
         ''');
+        print('Se ejecuta');
+        /*tabla usuarios, platillos, categorias,favoritos, carrito de comprasena
+        CREATE TABLE Platillos(
+          id INTEGER PRIMARY KEY,
+          nombrePlatillo TEXT, 
+          calificacion INTEGER,
+          descripcion TEXT,
+          linkImagen TEXT
+        );
+        CREATE TABLE Categorias(
+          id INTEGER PRIMARY KEY,
+          nombreCategoria TEXT, 
+          icono TEXT,          
+          linkImagen TEXT
+        );
+        CREATE TABLE Favoritos(
+          id INTEGER PRIMARY KEY,            //Continuar
+        );
+        CREATE TABLE CarritoCompras(
+          id INTEGER PRIMARY KEY,            //Continuar
+        );
+
+        */
       },
     );
   }

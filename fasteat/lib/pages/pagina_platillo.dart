@@ -24,7 +24,15 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [Platillo()],
+        children: [
+          Platillo(),
+          ElevatedButton(
+            onPressed: () {
+              //Aqui agrega a carrito la compra
+            },
+            child: Text('Agregar al Carrito'),
+          ),
+        ],
       ),
     );
   }

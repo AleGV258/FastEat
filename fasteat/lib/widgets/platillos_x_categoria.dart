@@ -49,8 +49,9 @@ class _Platillo extends StatelessWidget {
       margin: EdgeInsets.all(15),
       height: 220,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Colors.grey)),
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(color: Colors.grey),
+      ),
       child: Column(
         children: [
           Container(
