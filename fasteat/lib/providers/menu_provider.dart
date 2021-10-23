@@ -18,8 +18,8 @@ class _GetICategorias {
     return opciones;
   }
 }
-final categorias = new _GetICategorias(); //la convierte a publica la clase
 
+final categorias = new _GetICategorias(); //la convierte a publica la clase
 
 //esta clase es para recuperar los datos del JSON de rutas
 class _MenuProvider {
@@ -34,4 +34,5 @@ class _MenuProvider {
     return opciones;
   }
 }
+
 final menuProvider = new _MenuProvider();

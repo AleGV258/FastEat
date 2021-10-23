@@ -15,7 +15,8 @@ class Login extends StatelessWidget {
           children: [
             Image(image: AssetImage('assets/Logo.png'), height: 250),
             SizedBox(height: 10.0),
-            Text('Inicia Sesión', style: TextStyle(color: Colors.red[300], fontSize: 25)),
+            Text('Inicia Sesión',
+                style: TextStyle(color: Colors.red[300], fontSize: 25)),
             SizedBox(height: 10.0),
             _usuario(),
             SizedBox(height: 15.0),
@@ -24,7 +25,11 @@ class Login extends StatelessWidget {
             _iniciarSesion(context),
             SizedBox(height: 15.0),
             GestureDetector(
-              child: Text('¡No tienes cuenta, crea una!', style: TextStyle(decoration: TextDecoration.underline, color: Colors.orange[700], fontSize: 15)),
+              child: Text('¡No tienes cuenta, crea una!',
+                  style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.orange[700],
+                      fontSize: 15)),
               onTap: () {
                 Navigator.of(context).pushNamed('registro');
               },

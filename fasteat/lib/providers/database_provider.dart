@@ -12,7 +12,7 @@ class DBProvider {
   DBProvider._();
 
   Future get database async {
-    if(_database != null) return _database;
+    if (_database != null) return _database;
     _database = await initDB();
     return _database;
   }
@@ -24,7 +24,7 @@ class DBProvider {
     return await openDatabase(
       path,
       version: 2,
-      onOpen: (db){},
+      onOpen: (db) {},
       onCreate: (Database db, int version) async {
         await db.execute('''
         CREATE TABLE Usuarios(
@@ -39,7 +39,8 @@ class DBProvider {
     );
   }
 
-  Future registrarUsuario(Future id, String usuario, String correo, int numeroTel, String contrasena) async {
+  Future registrarUsuario(Future id, String usuario, String correo,
+      int numeroTel, String contrasena) async {
     final db = await database;
     final res = await db.rawQuery('''
       INSERT INTO Usuarios(id, usuario, correo, contrasena, numeroTel) VALUES ($id, $usuario, $correo, $numeroTel, $contrasena);

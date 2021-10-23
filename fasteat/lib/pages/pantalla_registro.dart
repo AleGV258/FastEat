@@ -22,9 +22,11 @@ class Registro extends StatelessWidget {
             SizedBox(height: 15.0),
             Image(image: AssetImage('assets/Logo.png'), height: 100),
             SizedBox(height: 10.0),
-            Text('¡Bienvenido!', style: TextStyle(color: Colors.black, fontSize: 30)),
+            Text('¡Bienvenido!',
+                style: TextStyle(color: Colors.black, fontSize: 30)),
             SizedBox(height: 10.0),
-            Text('Registrate', style: TextStyle(color: Colors.red[300], fontSize: 25)),
+            Text('Registrate',
+                style: TextStyle(color: Colors.red[300], fontSize: 25)),
             SizedBox(height: 10.0),
             _usuario(),
             SizedBox(height: 15.0),
@@ -38,11 +40,14 @@ class Registro extends StatelessWidget {
             _registrarse(context),
             SizedBox(height: 15.0),
             GestureDetector(
-              child: Text('¡Ya tienes cuenta, inicia sesión!', style: TextStyle(decoration: TextDecoration.underline, color: Colors.orange[700], fontSize: 15)),
-              onTap: () {
-                Navigator.of(context).pushNamed('login');
-              }
-            ),
+                child: Text('¡Ya tienes cuenta, inicia sesión!',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.orange[700],
+                        fontSize: 15)),
+                onTap: () {
+                  Navigator.of(context).pushNamed('login');
+                }),
             SizedBox(height: 15.0),
           ],
         ),
@@ -84,9 +89,7 @@ class Registro extends StatelessWidget {
             borderSide: BorderSide(color: Colors.red),
           ),
         ),
-        onChanged: (value) {
-
-        },
+        onChanged: (value) {},
       ),
     );
   }
@@ -104,9 +107,7 @@ class Registro extends StatelessWidget {
             borderSide: BorderSide(color: Colors.red),
           ),
         ),
-        onChanged: (value) {
-
-        },
+        onChanged: (value) {},
       ),
     );
   }
@@ -125,15 +126,13 @@ class Registro extends StatelessWidget {
             borderSide: BorderSide(color: Colors.red),
           ),
         ),
-        onChanged: (value) {
-
-        },
+        onChanged: (value) {},
       ),
     );
   }
 
-  Widget _registrarse(BuildContext context){
-  //Widget _registrarse(Future id, String usuario, String correo, int telefono, String contrasena, BuildContext context) {
+  Widget _registrarse(BuildContext context) {
+    //Widget _registrarse(Future id, String usuario, String correo, int telefono, String contrasena, BuildContext context) {
     return ElevatedButton(
       onPressed: () {
         // if(usuario == '' || correo == '' || telefono == 0 || contrasena == ''){
