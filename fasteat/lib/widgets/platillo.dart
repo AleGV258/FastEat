@@ -1,3 +1,4 @@
+import 'package:fasteat/widgets/comentarios.dart';
 import 'package:flutter/material.dart';
 
 class Platillo extends StatelessWidget {
@@ -35,6 +36,7 @@ class Platillo extends StatelessWidget {
             // ),
           ),
           comentarios(),
+          Comentarios(),
         ],
       ),
     );
@@ -73,7 +75,7 @@ class BotonPersonalizado extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Icon(this.icon, color: Colors.tealAccent),
+        Icon(this.icon, color: Colors.red),
         //puede ir sin el this tambien
         Text(this.texto, style: TextStyle(color: Colors.red)),
       ],

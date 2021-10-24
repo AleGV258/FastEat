@@ -36,22 +36,33 @@ class DBProvider {
         ''');
         print('Se ejecuta');
         /*tabla usuarios, platillos, categorias,favoritos, carrito de comprasena
-        CREATE TABLE Platillos(
+        CREATE TABLE Usuarios(
           id INTEGER PRIMARY KEY,
-          nombrePlatillo TEXT, 
-          calificacion INTEGER,
-          descripcion TEXT,
-          linkImagen TEXT
+          usuario TEXT,
+          correo TEXT,
+          contrasena TEXT,
+          numeroTel INTEGER
         );
+
+        CREATE TABLE Categorias(
+          id INTEGER PRIMARY KEY,
+          nombreCategoria TEXT, 
+          icono TEXT,          
+          linkImagen TEXT
+        );       
+        INSERT INTO Categorias(1, "Comida Rápida", "fastfood", "https://zetter.com.mx/wp-content/uploads/2020/09/restaurante-comida-rapida-exitoso.jpg");
+
         CREATE TABLE Categorias(
           id INTEGER PRIMARY KEY,
           nombreCategoria TEXT, 
           icono TEXT,          
           linkImagen TEXT
         );
+
         CREATE TABLE Favoritos(
           id INTEGER PRIMARY KEY,            //Continuar
         );
+
         CREATE TABLE CarritoCompras(
           id INTEGER PRIMARY KEY,            //Continuar
         );
@@ -83,6 +94,14 @@ class DBProvider {
     final res = await db.rawQuery('''
       SELECT COUNT(*) FROM Usuarios;
     ''') + 1;
+    return res;
+  }
+
+  Future recuperarCategorias(String usuario) async {
+    final db = await database;
+    final res = await db.rawQuery('''
+      SELECT * FROM Categorias;
+    ''');
     return res;
   }
 }

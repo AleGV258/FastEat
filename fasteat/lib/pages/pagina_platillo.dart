@@ -10,7 +10,18 @@ class PaginaPlatillo extends StatelessWidget {
       body: Stack(
         children: [
           _Body(),
-          //CardTable(),
+          Container(
+            alignment: Alignment.bottomCenter,
+            child: ElevatedButton(
+              onPressed: () {
+                //Aqui agrega a carrito la compra
+              },
+              child: Text('Agregar al Carrito'),
+              style: ElevatedButton.styleFrom(
+                textStyle: TextStyle(fontSize: 30),
+              ),
+            ),
+          ),
         ],
       ),
     );
@@ -26,12 +37,6 @@ class _Body extends StatelessWidget {
       child: Column(
         children: [
           Platillo(),
-          ElevatedButton(
-            onPressed: () {
-              //Aqui agrega a carrito la compra
-            },
-            child: Text('Agregar al Carrito'),
-          ),
         ],
       ),
     );
