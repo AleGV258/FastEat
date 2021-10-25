@@ -12,14 +12,14 @@ class CategoriasPlatillos extends StatelessWidget {
             children: [
               _Categoria(
                 imagen:
-                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.fastfood,
                 color: Colors.white,
                 texto: 'Comida Rápida',
               ),
               _Categoria(
                 imagen:
-                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.food_bank,
                 color: Colors.white,
                 texto: 'Restaurantes',
@@ -38,8 +38,8 @@ class CategoriasPlatillos extends StatelessWidget {
       initialData: [],
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Table(
-            //children: _categoria(snapshot.data, context),
-            );
+          //children: _categoria(snapshot.data, context),
+        );
       },
     );
   }

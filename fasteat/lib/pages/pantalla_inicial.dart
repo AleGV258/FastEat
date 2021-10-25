@@ -32,7 +32,7 @@ class PantallaInicial extends StatelessWidget {
 }
 
 class PaginaInicial extends StatelessWidget {
-  const PaginaInicial({Key? key}) : super(key: key);
+  const PaginaInicial ({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Stack(

@@ -2,6 +2,8 @@
 //Checar esta pagina ya que no funciona correctamente
 
 import 'dart:io';
+import 'package:fasteat/models/favorito_model.dart';
+import 'package:fasteat/models/usuario_model.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
@@ -12,18 +14,19 @@ class DBProvider {
   DBProvider._();
 
   Future get database async {
-    if (_database != null) return _database;
+    if(_database != null) return _database;
     _database = await initDB();
     return _database;
   }
 
   Future initDB() async {
     Directory documentDirectory = await getApplicationDocumentsDirectory();
-    final path = join(documentDirectory.path, 'scansdb.db');
+    final path = join(documentDirectory.path, 'baseDatosGeneral.db');
+    print(path);
     return await openDatabase(
       path,
-      version: 2,
-      onOpen: (db) {},
+      version: 3,
+      onOpen: (db){},
       onCreate: (Database db, int version) async {
         await db.execute('''
         CREATE TABLE Usuarios(
@@ -33,75 +36,62 @@ class DBProvider {
           contrasena TEXT,
           numeroTel INTEGER
         );
-        ''');
-        print('Se ejecuta');
-        /*tabla usuarios, platillos, categorias,favoritos, carrito de comprasena
-        CREATE TABLE Usuarios(
-          id INTEGER PRIMARY KEY,
-          usuario TEXT,
-          correo TEXT,
-          contrasena TEXT,
-          numeroTel INTEGER
+
+        CREATE TABLE Platillos(
+          idPlatillo INTEGER PRIMARY KEY,
+          nombre TEXT,
+          precio INTEGER
         );
 
-        CREATE TABLE Categorias(
-          id INTEGER PRIMARY KEY,
-          nombreCategoria TEXT, 
-          icono TEXT,          
-          linkImagen TEXT
-        );       
-        INSERT INTO Categorias(1, "Comida Rápida", "fastfood", "https://zetter.com.mx/wp-content/uploads/2020/09/restaurante-comida-rapida-exitoso.jpg");
-
-        CREATE TABLE Categorias(
-          id INTEGER PRIMARY KEY,
-          nombreCategoria TEXT, 
-          icono TEXT,          
-          linkImagen TEXT
+        CREATE TABLE Restaurantes(
+          idRestaurante INTEGER PRIMARY KEY,
+          ubicacion TEXT
         );
 
         CREATE TABLE Favoritos(
-          id INTEGER PRIMARY KEY,            //Continuar
+          idFavorito INTEGER PRIMARY KEY,
+          platillo TEXT,
+          restaurante TEXT
         );
-
-        CREATE TABLE CarritoCompras(
-          id INTEGER PRIMARY KEY,            //Continuar
-        );
-
-        */
+        ''');
       },
     );
   }
 
-  Future registrarUsuario(Future id, String usuario, String correo,
-      int numeroTel, String contrasena) async {
+  Future getAllScansFavorito() async {
     final db = await database;
-    final res = await db.rawQuery('''
-      INSERT INTO Usuarios(id, usuario, correo, contrasena, numeroTel) VALUES ($id, $usuario, $correo, $numeroTel, $contrasena);
-    ''');
+    final res = await db.query('Favoritos');
+    return res.isNotEmpty ? res.map((s) => Favorito.fromMap(s)).toList() : [];
+  }
+
+  Future addFavorito(Favorito nuevoFavorito) async {
+    final db = await database;
+    final res = await db.insert('Favoritos', nuevoFavorito.toMap());
+    return res; 
+  }
+
+  Future deleteFavorito(int id) async {
+    final db = await database;
+    final res = await db.delete('Favoritos', where:'idFavorito=?', whereArgs:[id]);
     return res;
   }
 
-  Future recuperarUsuario(String usuario) async {
+  Future getAllScansUsuario() async {
     final db = await database;
-    final res = await db.rawQuery('''
-      SELECT * FROM Usuarios WHERE usuario = $usuario;
-    ''');
+    final res = await db.query('Usuarios');
+    return res.isNotEmpty ? res.map((s) => Usuario.fromMap(s)).toList() : [];
+  }
+
+  Future addUsuario(Usuario nuevoUsuario) async {
+    final db = await database;
+    final res = await db.insert('Usuarios', nuevoUsuario.toMap());
+    return res; 
+  }
+
+  Future deleteUsuario(int id) async {
+    final db = await database;
+    final res = await db.delete('Usuarios', where:'id=?', whereArgs:[id]);
     return res;
   }
 
-  Future cantidadUsuarios() async {
-    final db = await database;
-    final res = await db.rawQuery('''
-      SELECT COUNT(*) FROM Usuarios;
-    ''') + 1;
-    return res;
-  }
-
-  Future recuperarCategorias(String usuario) async {
-    final db = await database;
-    final res = await db.rawQuery('''
-      SELECT * FROM Categorias;
-    ''');
-    return res;
-  }
 }

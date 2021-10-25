@@ -1,31 +1,29 @@
+import 'package:fasteat/providers/gestor_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
-class MenuAbajo extends StatefulWidget {
+class MenuAbajo extends StatelessWidget {
   const MenuAbajo({Key? key}) : super(key: key);
-
-  @override
-  _MenuAbajoState createState() => _MenuAbajoState();
-}
-
-class _MenuAbajoState extends State<MenuAbajo> {
-  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final gestorProvider = Provider.of<GestorProvider>(context);
+    final index = gestorProvider.opcionSeleccionada;
     return BottomNavigationBar(
-      showSelectedLabels: false,
-      showUnselectedLabels: false,
+      onTap: (int i) => gestorProvider.opcionSeleccionada = i,
+      // showSelectedLabels: false,
+      // showUnselectedLabels: false,
       selectedItemColor: Colors.red,
       backgroundColor: Colors.white,
       unselectedItemColor: Colors.orange,
-      currentIndex: _selectedIndex,
+      currentIndex: index,
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.list),
-          label: 'Categorias',
+          label: 'Categoría',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.favorite),
-          label: 'Favoritos',
+          label: 'Favorito',
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.account_circle),
@@ -37,10 +35,5 @@ class _MenuAbajoState extends State<MenuAbajo> {
         ),
       ],
     );
-  }
-
-  void _onTap(int index) {
-    _selectedIndex = index;
-    setState(() {});
   }
 }
