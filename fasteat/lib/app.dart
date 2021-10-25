@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Fast Eat',
-      initialRoute: 'platillo',
+      initialRoute: 'categoria',
       routes: getRoutes(),
       theme: ThemeData().copyWith(
         colorScheme: ThemeData().colorScheme.copyWith(

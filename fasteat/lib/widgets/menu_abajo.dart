@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 
-class MenuAbajo extends StatelessWidget {
+class MenuAbajo extends StatefulWidget {
   const MenuAbajo({Key? key}) : super(key: key);
 
+  @override
+  _MenuAbajoState createState() => _MenuAbajoState();
+}
+
+class _MenuAbajoState extends State<MenuAbajo> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
@@ -11,7 +17,7 @@ class MenuAbajo extends StatelessWidget {
       selectedItemColor: Colors.red,
       backgroundColor: Colors.white,
       unselectedItemColor: Colors.orange,
-      currentIndex: 0,
+      currentIndex: _selectedIndex,
       items: [
         BottomNavigationBarItem(
           icon: Icon(Icons.list),
@@ -31,5 +37,10 @@ class MenuAbajo extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _onTap(int index) {
+    _selectedIndex = index;
+    setState(() {});
   }
 }

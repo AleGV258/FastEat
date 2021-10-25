@@ -37,6 +37,7 @@ class _Body extends StatelessWidget {
       child: Column(
         children: [
           Platillo(),
+          SizedBox(height: 50.0),
         ],
       ),
     );
