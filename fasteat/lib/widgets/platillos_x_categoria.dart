@@ -1,3 +1,4 @@
+import 'package:fasteat/pages/pagina_platillo.dart';
 import 'package:flutter/material.dart';
 
 class PlatillosXCategoria extends StatelessWidget {
@@ -55,7 +56,11 @@ class _Platillo extends StatelessWidget {
       child: InkWell(
         onTap: () {
           print("Container clicked");
-          Navigator.of(context).pushNamed('platillo');
+          Navigator.of(context).pushNamed(
+            'platillo',
+            arguments: {'nombrePlatillo': 'XD'},
+          );
+          //Navigator.push(context, PaginaPlatillo(nombrePlatillo: "nombrePlatillo")),
         },
         child: Column(
           children: [

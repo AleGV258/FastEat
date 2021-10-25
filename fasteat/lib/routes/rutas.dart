@@ -15,6 +15,8 @@ Map<String, WidgetBuilder> getRoutes() {
     'login': (BuildContext context) => Login(),
     'registro': (BuildContext context) => Registro(),
     'platillosCategoria': (BuildContext context) => PaginaPlatillosXCategoria(),
-    'platillo': (BuildContext context) => PaginaPlatillo(),
+    'platillo': (BuildContext context) => PaginaPlatillo(
+          nombrePlatillo: 'Nombres',
+        ),
   };
 }

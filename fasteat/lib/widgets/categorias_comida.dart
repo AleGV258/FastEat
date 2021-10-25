@@ -2,6 +2,7 @@ import 'package:fasteat/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
 class CategoriasPlatillos extends StatefulWidget {
+  
   const CategoriasPlatillos({Key? key}) : super(key: key);
 
   @override
