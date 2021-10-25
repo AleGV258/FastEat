@@ -22,7 +22,8 @@ class _LoginState extends State<Login> {
           children: [
             Image(image: AssetImage('assets/Logo.png'), height: 250),
             SizedBox(height: 10.0),
-            Text('Inicia Sesión', style: TextStyle(color: Colors.red[300], fontSize: 25)),
+            Text('Inicia Sesión',
+                style: TextStyle(color: Colors.red[300], fontSize: 25)),
             SizedBox(height: 10.0),
             _usuario(),
             SizedBox(height: 15.0),
@@ -31,7 +32,11 @@ class _LoginState extends State<Login> {
             _iniciarSesion(context),
             SizedBox(height: 15.0),
             GestureDetector(
-              child: Text('¡No tienes cuenta, crea una!', style: TextStyle(decoration: TextDecoration.underline, color: Colors.orange[700], fontSize: 15)),
+              child: Text('¡No tienes cuenta, crea una!',
+                  style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      color: Colors.orange[700],
+                      fontSize: 15)),
               onTap: () {
                 Navigator.of(context).pushNamed('registro');
               },
@@ -92,10 +97,10 @@ class _LoginState extends State<Login> {
   Widget _iniciarSesion(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        if(usuarioIngreso != '' && contrasenaIngreso != ''){
+        if (usuarioIngreso != '' && contrasenaIngreso != '') {
           //Usuario(usuario: usuarioNew, correo: correoNew, contrasena: contrasenaNew, numeroTel: telefonoNew, id: null);
           Navigator.of(context).pushNamed('home');
-        }else{
+        } else {
           _mostrarAlerta(context);
         }
       },
@@ -118,11 +123,14 @@ class _LoginState extends State<Login> {
       builder: (context) {
         return AlertDialog(
           shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           title: Text('Error de Ingreso'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[Text('No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')],
+            children: <Widget>[
+              Text(
+                  'No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')
+            ],
           ),
           actions: <Widget>[
             TextButton(

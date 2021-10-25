@@ -1,8 +1,14 @@
 import 'package:fasteat/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
-class CategoriasPlatillos extends StatelessWidget {
+class CategoriasPlatillos extends StatefulWidget {
   const CategoriasPlatillos({Key? key}) : super(key: key);
+
+  @override
+  _CategoriasPlatillosState createState() => _CategoriasPlatillosState();
+}
+
+class _CategoriasPlatillosState extends State<CategoriasPlatillos> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -12,14 +18,14 @@ class CategoriasPlatillos extends StatelessWidget {
             children: [
               _Categoria(
                 imagen:
-                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.fastfood,
                 color: Colors.white,
                 texto: 'Comida Rápida',
               ),
               _Categoria(
                 imagen:
-                  Image(image: AssetImage('assets/Logo3.png'), height: 300),
+                    Image(image: AssetImage('assets/Logo3.png'), height: 300),
                 icon: Icons.food_bank,
                 color: Colors.white,
                 texto: 'Restaurantes',
@@ -38,27 +44,11 @@ class CategoriasPlatillos extends StatelessWidget {
       initialData: [],
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Table(
-          //children: _categoria(snapshot.data, context),
-        );
+            //children: _categoria(snapshot.data, context),
+            );
       },
     );
   }
-
-  // TableRow _categoria(List<dynamic>? data, BuildContext context) {
-  //   final TableRow opciones = [];
-  //   data?.forEach((op) {
-  //     final widgetTemporal = _Categoria(
-  //       imagen: Image(image: AssetImage('assets/Logo3.png'), height: 300),
-  //       icon: Icons.food_bank,
-  //       color: Colors.white,
-  //       texto: 'Restaurantes',
-  //       // title: Text(op['texto']),
-  //       // //leading: getIcon(op['icon']),
-  //     );
-  //     //opciones..add(widgetTemporal)..add(Divider());
-  //   });
-  //   return opciones;
-  // }
 }
 
 class _Categoria extends StatelessWidget {
@@ -89,16 +79,22 @@ class _Categoria extends StatelessWidget {
         ),
         borderRadius: BorderRadius.circular(10),
       ),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          CircleAvatar(
-            backgroundColor: this.color,
-            child: Icon(this.icon, size: 35),
-            radius: 30,
-          ),
-          Text(this.texto, style: TextStyle(color: this.color, fontSize: 22)),
-        ],
+      child: InkWell(
+        onTap: () {
+          print("Container clicked");
+          Navigator.of(context).pushNamed('platillosCategoria');
+        },
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            CircleAvatar(
+              backgroundColor: this.color,
+              child: Icon(this.icon, size: 35),
+              radius: 30,
+            ),
+            Text(this.texto, style: TextStyle(color: this.color, fontSize: 22)),
+          ],
+        ),
       ),
     );
   }

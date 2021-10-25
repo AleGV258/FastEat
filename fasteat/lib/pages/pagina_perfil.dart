@@ -1,3 +1,4 @@
+import 'package:fasteat/widgets/menu_abajo.dart';
 import 'package:flutter/material.dart';
 
 class PaginaPerfil extends StatelessWidget {
@@ -35,6 +36,7 @@ class PaginaPerfil extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: MenuAbajo(),
     );
   }
 
@@ -54,7 +56,7 @@ class PaginaPerfil extends StatelessWidget {
         onChanged: (value) {
           //usuario = value;
         },
-        autofocus: true,
+        //autofocus: true,
       ),
     );
   }

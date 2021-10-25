@@ -52,20 +52,27 @@ class _Platillo extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey),
       ),
-      child: Column(
-        children: [
-          Container(
-            child: Image(
-              image: AssetImage('assets/pantallaInicio4.png'),
-              fit: BoxFit.cover,
+      child: InkWell(
+        onTap: () {
+          print("Container clicked");
+          Navigator.of(context).pushNamed('platillo');
+        },
+        child: Column(
+          children: [
+            Container(
+              child: Image(
+                image: AssetImage('assets/pantallaInicio4.png'),
+                fit: BoxFit.cover,
+              ),
+              height: 150,
+              width: 220,
             ),
-            height: 150,
-            width: 220,
-          ),
-          Text('\$ ' '$precio',
-              style: TextStyle(color: this.color, fontSize: 22)),
-          Text(this.texto, style: TextStyle(color: Colors.black, fontSize: 22)),
-        ],
+            Text('\$ ' '$precio',
+                style: TextStyle(color: this.color, fontSize: 22)),
+            Text(this.texto,
+                style: TextStyle(color: Colors.black, fontSize: 22)),
+          ],
+        ),
       ),
     );
   }

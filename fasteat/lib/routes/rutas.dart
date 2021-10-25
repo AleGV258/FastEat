@@ -1,4 +1,6 @@
 import 'package:fasteat/pages/home_pagina.dart';
+import 'package:fasteat/pages/pagina_platillo.dart';
+import 'package:fasteat/pages/pagina_platillos_categoria.dart';
 import 'package:fasteat/pages/pantalla_inicial.dart';
 import 'package:fasteat/pages/pantalla_login.dart';
 import 'package:fasteat/pages/pantalla_registro.dart';
@@ -12,6 +14,7 @@ Map<String, WidgetBuilder> getRoutes() {
     'inicial': (BuildContext context) => PantallaInicial(),
     'login': (BuildContext context) => Login(),
     'registro': (BuildContext context) => Registro(),
+    'platillosCategoria': (BuildContext context) => PaginaPlatillosXCategoria(),
+    'platillo': (BuildContext context) => PaginaPlatillo(),
   };
 }
-
