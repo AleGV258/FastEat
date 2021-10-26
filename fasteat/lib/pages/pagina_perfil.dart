@@ -6,23 +6,25 @@ class PaginaPerfil extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        alignment: Alignment.center,
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Perfil',
-                style: TextStyle(color: Colors.red[300], fontSize: 25)),
-            SizedBox(height: 10.0),
+                style: TextStyle(color: Colors.red[300], fontSize: 29)),
+            SizedBox(height: 20.0),
+            CircleAvatar(
+              backgroundImage: NetworkImage(
+                  'http://assets.stickpng.com/thumbs/585e4bcdcb11b227491c3396.png'),
+              radius: 90,
+            ),
+            SizedBox(height: 17.0),
             _usuario(),
             SizedBox(height: 15.0),
             _correo(),
             SizedBox(height: 15.0),
             _telefono(),
-            SizedBox(height: 15.0),
-            _contrasena(),
-            SizedBox(height: 20.0),
-            //_registrarse(id, usuario, correo, telefono, contrasena, context),
-            _registrarse(context),
             SizedBox(height: 15.0),
             GestureDetector(
                 child: Text('',
@@ -43,20 +45,17 @@ class PaginaPerfil extends StatelessWidget {
   Widget _usuario() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 35.0),
-      child: TextField(
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-          icon: Icon(Icons.person),
-          hintText: 'Usuario',
-          labelText: 'Usuario:',
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red),
+      child: Column(
+        children: [
+          Text(
+            'Nombre:',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-        ),
-        onChanged: (value) {
-          //usuario = value;
-        },
-        //autofocus: true,
+          Text(
+            'Daniel León Paulin',
+            style: TextStyle(fontSize: 25),
+          ),
+        ],
       ),
     );
   }
@@ -64,17 +63,17 @@ class PaginaPerfil extends StatelessWidget {
   Widget _correo() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 35.0),
-      child: TextField(
-        keyboardType: TextInputType.emailAddress,
-        decoration: InputDecoration(
-          icon: Icon(Icons.email),
-          hintText: 'ejemplo@correo.com',
-          labelText: 'Correo Electrónico:',
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red),
+      child: Column(
+        children: [
+          Text(
+            'Correo Electrónico:',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-        ),
-        onChanged: (value) {},
+          Text(
+            'dleon29@alumnos.uaq.mx',
+            style: TextStyle(fontSize: 25),
+          ),
+        ],
       ),
     );
   }
@@ -82,55 +81,17 @@ class PaginaPerfil extends StatelessWidget {
   Widget _telefono() {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 35.0),
-      child: TextField(
-        keyboardType: TextInputType.phone,
-        decoration: InputDecoration(
-          icon: Icon(Icons.local_phone),
-          hintText: 'Teléfono',
-          labelText: 'Teléfono:',
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red),
+      child: Column(
+        children: [
+          Text(
+            'Teléfono:',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
-        ),
-        onChanged: (value) {},
-      ),
-    );
-  }
-
-  Widget _contrasena() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 35.0),
-      child: TextField(
-        obscureText: true,
-        keyboardType: TextInputType.text,
-        decoration: InputDecoration(
-          icon: Icon(Icons.password),
-          hintText: 'Contraseña',
-          labelText: 'Contraseña:',
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.red),
+          Text(
+            '442-145-2984',
+            style: TextStyle(fontSize: 25),
           ),
-        ),
-        onChanged: (value) {},
-      ),
-    );
-  }
-
-  Widget _registrarse(BuildContext context) {
-    //Widget _registrarse(Future id, String usuario, String correo, int telefono, String contrasena, BuildContext context) {
-    return ElevatedButton(
-      onPressed: () {
-        Navigator.of(context).pushNamed('categoria');
-      },
-      child: Container(
-        padding: EdgeInsets.symmetric(horizontal: 80.0, vertical: 20.0),
-        child: Text('Guardar Cambios', style: TextStyle(fontSize: 17.0)),
-      ),
-      style: ElevatedButton.styleFrom(
-        primary: Colors.red,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+        ],
       ),
     );
   }
