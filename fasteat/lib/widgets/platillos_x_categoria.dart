@@ -12,16 +12,18 @@ class PlatillosXCategoria extends StatelessWidget {
           TableRow(
             children: [
               _Platillo(
-                imagen: Image(image: AssetImage('assets/Logo3.png')),
+                imagen:
+                    'https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg',
                 color: Colors.red,
-                precio: 250.00,
-                texto: 'Comida Rápida',
+                precio: 105.00,
+                texto: 'Hamburguesa',
               ),
               _Platillo(
-                imagen: Image(image: AssetImage('assets/Logo3.png')),
+                imagen:
+                    'https://www.lavanguardia.com/files/og_thumbnail/files/fp/uploads/2021/03/30/6063031b90a87.r_d.1083-871-0.jpeg',
                 color: Colors.red,
-                precio: 1820.00,
-                texto: 'Comida Rápida',
+                precio: 25.00,
+                texto: 'Pizza',
               ),
             ],
           ),
@@ -32,7 +34,7 @@ class PlatillosXCategoria extends StatelessWidget {
 }
 
 class _Platillo extends StatelessWidget {
-  final Image imagen;
+  final String imagen;
   final Color color;
   final double precio;
   final String texto;
@@ -58,7 +60,7 @@ class _Platillo extends StatelessWidget {
           print("Container clicked");
           Navigator.of(context).pushNamed(
             'platillo',
-            arguments: {'nombrePlatillo': 'XD'},
+            arguments: {'nombrePlatillo': this.texto},
           );
           //Navigator.push(context, PaginaPlatillo(nombrePlatillo: "nombrePlatillo")),
         },
@@ -66,7 +68,7 @@ class _Platillo extends StatelessWidget {
           children: [
             Container(
               child: Image(
-                image: AssetImage('assets/pantallaInicio4.png'),
+                image: NetworkImage(this.imagen),
                 fit: BoxFit.cover,
               ),
               height: 150,

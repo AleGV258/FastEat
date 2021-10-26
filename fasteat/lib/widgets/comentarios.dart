@@ -6,7 +6,7 @@ class Comentarios extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 120,
+      height: 160,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey),
@@ -17,23 +17,7 @@ class Comentarios extends StatelessWidget {
             TableRow(
               children: [
                 _Comentario(
-                  nombre: 'Luis',
-                  texto: 'Muy bueno, lo recomiendo, vayan al lugar',
-                ),
-              ],
-            ),
-            TableRow(
-              children: [
-                _Comentario(
-                  nombre: 'Luis',
-                  texto: 'Muy bueno, lo recomiendo, vayan al lugar',
-                ),
-              ],
-            ),
-            TableRow(
-              children: [
-                _Comentario(
-                  nombre: 'Luis',
+                  nombre: 'Erika Ramirez',
                   texto: 'Muy bueno, lo recomiendo, vayan al lugar.',
                 ),
               ],
@@ -41,8 +25,24 @@ class Comentarios extends StatelessWidget {
             TableRow(
               children: [
                 _Comentario(
-                  nombre: 'Luis',
-                  texto: 'Muy bueno, lo recomiendo, vayan al lugar',
+                  nombre: 'Luis Ibarra',
+                  texto: 'Deliciosa Hamburguesa.',
+                ),
+              ],
+            ),
+            TableRow(
+              children: [
+                _Comentario(
+                  nombre: 'Israel Flores',
+                  texto: 'Muy bueno, lo recomiendo, vayan al lugar.',
+                ),
+              ],
+            ),
+            TableRow(
+              children: [
+                _Comentario(
+                  nombre: 'Israel Flores',
+                  texto: 'Muy bueno, lo recomiendo, vayan al lugar.',
                 ),
               ],
             ),

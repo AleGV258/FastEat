@@ -10,7 +10,9 @@ class Platillo extends StatelessWidget {
       child: Column(
         children: [
           Image(
-            image: AssetImage('assets/pantallaInicio0.png'),
+            image: NetworkImage(
+              'https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg',
+            ),
           ),
           titulo(),
           seccionBotones(),
@@ -27,7 +29,7 @@ class Platillo extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
-              'Aliquip officia velit reprehenderit enim incididunt eiusmod culpa dolor ipsum nulla nulla enim dolor. Ullamco cillum officia amet officia ullamco nostrud non pariatur aliquip ut cupidatat duis voluptate voluptate. Ipsum duis culpa pariatur elit esse anim. Esse sint commodo Lorem occaecat amet consectetur dolor labore sit exercitation. Sint Lorem mollit magna occaecat ea.',
+              'Nuestra jugosa hamburguesa Angus cubierta con crujientes tiras de cebolla y blue cheese, bañados con salsa BBQ, acompañada de ensalada de col tipo Baja.',
               textAlign: TextAlign.center,
             ),
             // decoration: BoxDecoration(
@@ -98,14 +100,14 @@ class titulo extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Nombre del platillo',
+                'Hamburguesa',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
               //Text('Precio', style: TextStyle(fontSize: 25)),
             ],
           ),
           Expanded(child: Container(height: 10)),
-          Text('\$ 234.432', style: TextStyle(color: Colors.red, fontSize: 25)),
+          Text('\$ 105.00', style: TextStyle(color: Colors.red, fontSize: 25)),
         ],
       ),
     );

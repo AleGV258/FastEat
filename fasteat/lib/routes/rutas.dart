@@ -1,6 +1,7 @@
 import 'package:fasteat/pages/home_pagina.dart';
 import 'package:fasteat/pages/pagina_platillo.dart';
 import 'package:fasteat/pages/pagina_platillos_categoria.dart';
+import 'package:fasteat/pages/pagina_restaurante.dart';
 import 'package:fasteat/pages/pantalla_inicial.dart';
 import 'package:fasteat/pages/pantalla_login.dart';
 import 'package:fasteat/pages/pantalla_registro.dart';
@@ -18,5 +19,6 @@ Map<String, WidgetBuilder> getRoutes() {
     'platillo': (BuildContext context) => PaginaPlatillo(
           nombrePlatillo: 'Nombres',
         ),
+    'restaurante': (BuildContext context) => PaginaRestaurante(),
   };
 }
