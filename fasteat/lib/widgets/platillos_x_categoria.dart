@@ -74,8 +74,20 @@ class _Platillo extends StatelessWidget {
               width: 220,
             ),
             SizedBox(height: 5.0),
-            Text('\$ ' '$precio', style: TextStyle(color: this.color, fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
-            Text(this.texto, style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+            Text(
+              '\$ ' '$precio',
+              style: TextStyle(
+                  color: this.color, fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
+            Text(
+              this.texto,
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
+            ),
             SizedBox(height: 5.0),
           ],
         ),

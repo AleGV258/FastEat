@@ -10,7 +10,8 @@ class Platillo extends StatelessWidget {
         children: [
           FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: NetworkImage('https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg',
+            image: NetworkImage(
+              'https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg',
             ),
           ),
           titulo(),
@@ -28,9 +29,8 @@ class Platillo extends StatelessWidget {
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
-              'Nuestra jugosa hamburguesa Angus cubierta con crujientes tiras de cebolla y blue cheese, bañados con salsa BBQ, acompañada de ensalada de col tipo Baja.',
-              textAlign: TextAlign.justify
-            ),
+                'Nuestra jugosa hamburguesa Angus cubierta con crujientes tiras de cebolla y blue cheese, bañados con salsa BBQ, acompañada de ensalada de col tipo Baja.',
+                textAlign: TextAlign.justify),
             // decoration: BoxDecoration(
             //   borderRadius: BorderRadius.circular(10),
             //   border: Border.all(color: Colors.grey),
@@ -67,7 +67,8 @@ class seccionBotones extends StatelessWidget {
 class BotonPersonalizado extends StatelessWidget {
   final IconData icon;
   final String texto;
-  const BotonPersonalizado({Key? key, required this.icon, required this.texto}): super(key: key);
+  const BotonPersonalizado({Key? key, required this.icon, required this.texto})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -81,7 +82,9 @@ class BotonPersonalizado extends StatelessWidget {
 }
 
 class titulo extends StatelessWidget {
-  const titulo({Key? key,}) : super(key: key);
+  const titulo({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -99,7 +102,11 @@ class titulo extends StatelessWidget {
             ],
           ),
           Expanded(child: Container(height: 10)),
-          Text('\$ 105.00', style: TextStyle(fontWeight: FontWeight.bold, color: Colors.red, fontSize: 25)),
+          Text('\$ 105.00',
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                  fontSize: 25)),
         ],
       ),
     );

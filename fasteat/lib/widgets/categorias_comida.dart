@@ -38,7 +38,7 @@ class _CategoriasPlatillosState extends State<CategoriasPlatillos> {
                     'https://dam.caras.com.mx/wp-content/uploads/2020/09/comida-mexicana-para-las-fiestas-patrias.jpg',
                 icon: Icons.food_bank,
                 color: Colors.white,
-                texto: 'Comida Mexicana', 
+                texto: 'Comida Mexicana',
               ),
               _CategoriaRestaurantes(
                 imagen: Image(
@@ -62,8 +62,8 @@ class _CategoriasPlatillosState extends State<CategoriasPlatillos> {
       initialData: [],
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         return Table(
-          //children: _categoria(snapshot.data, context),
-        );
+            //children: _categoria(snapshot.data, context),
+            );
       },
     );
   }
@@ -110,7 +110,14 @@ class _Categoria extends StatelessWidget {
               child: Icon(this.icon, size: 35, color: Colors.red),
               radius: 30,
             ),
-            Text(this.texto, style: TextStyle(color: this.color, fontSize: 22, ), textAlign: TextAlign.center,),
+            Text(
+              this.texto,
+              style: TextStyle(
+                color: this.color,
+                fontSize: 22,
+              ),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
@@ -139,8 +146,10 @@ class _CategoriaRestaurantes extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.black,
         image: DecorationImage(
-          image: NetworkImage('https://resizer.otstatic.com/v2/photos/wide-huge/1/31667145.jpg'),
-          colorFilter: new ColorFilter.mode(Colors.black.withOpacity(0.5), BlendMode.dstATop),
+          image: NetworkImage(
+              'https://resizer.otstatic.com/v2/photos/wide-huge/1/31667145.jpg'),
+          colorFilter: new ColorFilter.mode(
+              Colors.black.withOpacity(0.5), BlendMode.dstATop),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.circular(10),
@@ -158,7 +167,11 @@ class _CategoriaRestaurantes extends StatelessWidget {
               child: Icon(this.icon, size: 35, color: Colors.red),
               radius: 30,
             ),
-            Text(this.texto, style: TextStyle(color: this.color, fontSize: 22), textAlign: TextAlign.center,),
+            Text(
+              this.texto,
+              style: TextStyle(color: this.color, fontSize: 22),
+              textAlign: TextAlign.center,
+            ),
           ],
         ),
       ),
