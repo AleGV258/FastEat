@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MenuAbajo extends StatelessWidget {
-  const MenuAbajo({Key? key}) : super(key: key);
+  const MenuAbajo({Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final gestorProvider = Provider.of<GestorProvider>(context);
     final index = gestorProvider.opcionSeleccionada;
     return BottomNavigationBar(
       onTap: (int i) => gestorProvider.opcionSeleccionada = i,
-      // showSelectedLabels: false,
+      // elevation: 0,
+      // showSelectedLabels: true,
       // showUnselectedLabels: false,
       selectedItemColor: Colors.red,
       backgroundColor: Colors.white,

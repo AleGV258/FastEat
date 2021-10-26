@@ -1,6 +1,3 @@
-/* CHECAR */
-//Este archivo solo va a leer los archivos del json
-
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;

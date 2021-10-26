@@ -25,7 +25,7 @@ class _RegistroState extends State<Registro> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SizedBox(height: 15.0),
-            Image(image: AssetImage('assets/Logo.png'), height: 100),
+            FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 100),
             SizedBox(height: 10.0),
             Text('¡Bienvenido!', style: TextStyle(color: Colors.black, fontSize: 30)),
             SizedBox(height: 10.0),

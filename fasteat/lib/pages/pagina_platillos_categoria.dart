@@ -3,12 +3,11 @@ import 'package:flutter/material.dart';
 
 class PaginaPlatillosXCategoria extends StatelessWidget {
   const PaginaPlatillosXCategoria({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categoria Nombre'),
+        title: Text('Comida'),
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
@@ -24,12 +23,13 @@ class PaginaPlatillosXCategoria extends StatelessWidget {
 
 class _Body extends StatelessWidget {
   const _Body({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [PlatillosXCategoria()],
+        children: [
+          PlatillosXCategoria()
+        ],
       ),
     );
   }

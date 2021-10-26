@@ -3,12 +3,21 @@ import 'package:flutter/material.dart';
 
 class PaginaPlatillo extends StatelessWidget {
   final String nombrePlatillo;
-  const PaginaPlatillo({Key? key, required this.nombrePlatillo})
-      : super(key: key);
-
+  const PaginaPlatillo({Key? key, required this.nombrePlatillo}): super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniStartTop,
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 10.0),
+        child: FloatingActionButton(
+          backgroundColor: Color.fromRGBO(255, 255, 255, 0.5),
+          child: Icon(Icons.arrow_back_rounded, color: Colors.black),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: Stack(
         children: [
           _Body(),
@@ -33,7 +42,6 @@ class PaginaPlatillo extends StatelessWidget {
 
 class _Body extends StatelessWidget {
   const _Body({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(

@@ -41,8 +41,8 @@ class Comentarios extends StatelessWidget {
             TableRow(
               children: [
                 _Comentario(
-                  nombre: 'Israel Flores',
-                  texto: 'Muy bueno, lo recomiendo, vayan al lugar.',
+                  nombre: 'Armando Rangel',
+                  texto: 'Deliciosa comida, muy recomendable.',
                 ),
               ],
             ),
@@ -64,6 +64,7 @@ class _Comentario extends StatelessWidget {
       //width: 130,
       //margin: EdgeInsets.all(15),
       //height: 45,
+      padding: const EdgeInsets.all(8.0),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey),
       ),

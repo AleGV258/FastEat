@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 class PlatillosXCategoria extends StatelessWidget {
   const PlatillosXCategoria({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -45,14 +44,13 @@ class _Platillo extends StatelessWidget {
       required this.precio,
       required this.texto})
       : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(15),
+      padding: EdgeInsets.all(2),
       height: 220,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
         border: Border.all(color: Colors.grey),
       ),
       child: InkWell(
@@ -67,17 +65,18 @@ class _Platillo extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              child: Image(
+              child: FadeInImage(
+                placeholder: AssetImage('assets/loading.gif'),
                 image: NetworkImage(this.imagen),
                 fit: BoxFit.cover,
               ),
               height: 150,
               width: 220,
             ),
-            Text('\$ ' '$precio',
-                style: TextStyle(color: this.color, fontSize: 22)),
-            Text(this.texto,
-                style: TextStyle(color: Colors.black, fontSize: 22)),
+            SizedBox(height: 5.0),
+            Text('\$ ' '$precio', style: TextStyle(color: this.color, fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+            Text(this.texto, style: TextStyle(color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold), textAlign: TextAlign.center,),
+            SizedBox(height: 5.0),
           ],
         ),
       ),

@@ -1,15 +1,17 @@
+import 'dart:typed_data';
+
 import 'package:fasteat/widgets/comentarios.dart';
 import 'package:flutter/material.dart';
 
 class Restaurante extends StatelessWidget {
   const Restaurante({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
-          Image(
+          FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: NetworkImage(
                 'https://resizer.otstatic.com/v2/photos/wide-huge/1/31667145.jpg'),
           ),
@@ -29,7 +31,7 @@ class Restaurante extends StatelessWidget {
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: Text(
               'La Guaquería es un restaurante inspirado en la mezcla y toques de sabores, texturas y colores ubicados en el hall de entrada al Hotel y Centro de Eventos Malibu en la ciudad de Sincelejo. Animado con una brisa fresca en el centro de una arquitectura moderna, con una gran guaca de sabores. Nuestro menú es una experiencia ecléctica de la mejor cocina internacional con un toque de estilo mediterráneo.',
-              textAlign: TextAlign.center,
+              textAlign: TextAlign.justify,
             ),
           ),
         ],
@@ -39,16 +41,13 @@ class Restaurante extends StatelessWidget {
 }
 
 class seccionBotones extends StatelessWidget {
-  const seccionBotones({
-    Key? key,
-  }) : super(key: key);
-
+  const seccionBotones({Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -63,14 +62,11 @@ class seccionBotones extends StatelessWidget {
 }
 
 class titulo extends StatelessWidget {
-  const titulo({
-    Key? key,
-  }) : super(key: key);
-
+  const titulo({Key? key,}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 30),
+      margin: EdgeInsets.symmetric(horizontal: 30, vertical: 20),
       child: Row(
         children: [
           Column(

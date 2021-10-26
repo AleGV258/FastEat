@@ -1,5 +1,3 @@
-/* CHECAR */
-
 import 'package:fasteat/pages/pantalla_login.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -67,29 +65,41 @@ class Fondo extends StatelessWidget {
     final rnd = min + random.nextInt(max - min);
     switch (rnd) {
       case 0:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
       case 1:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio1.png'), fit: BoxFit.cover);
       case 2:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio2.png'), fit: BoxFit.cover);
       case 3:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio3.png'), fit: BoxFit.cover);
       case 4:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio4.png'), fit: BoxFit.cover);
       case 5:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio5.png'), fit: BoxFit.cover);
       case 6:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio6.png'), fit: BoxFit.cover);
       case 7:
-        return Image(
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
             image: AssetImage('assets/pantallaInicio7.png'), fit: BoxFit.cover);
+      default:
+        return FadeInImage(
+            placeholder: AssetImage('assets/loading.gif'),
+            image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
     }
   }
 }
@@ -98,17 +108,14 @@ class Contenido extends StatelessWidget {
   const Contenido({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    //var textStyle = TextStyle(fontSize: 60, fontWeight: FontWeight.bold, color: Colors.white);
     return SafeArea(
-      //bottom: false,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(height: 30),
           Expanded(child: Container()), //Separar
-          //Text('FastEat', style: TextStyle(color: Colors.red, fontSize: 70)),
-          Image(image: AssetImage('assets/Logo.png'), height: 300),
+          FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 300),
           Expanded(child: Container()), //Separar
           Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white),
         ],

@@ -5,18 +5,23 @@ class PaginaPerfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Perfil'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
       body: Container(
         alignment: Alignment.center,
         color: Colors.white,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Perfil',
-                style: TextStyle(color: Colors.red[300], fontSize: 29)),
+            // SizedBox(height: 20.0),
+            // Text('Perfil',
+            //     style: TextStyle(color: Colors.red[300], fontSize: 29, fontWeight: FontWeight.bold)),
             SizedBox(height: 20.0),
             CircleAvatar(
-              backgroundImage: NetworkImage(
-                  'http://assets.stickpng.com/thumbs/585e4bcdcb11b227491c3396.png'),
+              backgroundImage: NetworkImage('http://assets.stickpng.com/thumbs/585e4bcdcb11b227491c3396.png'),
               radius: 90,
             ),
             SizedBox(height: 17.0),
@@ -52,8 +57,8 @@ class PaginaPerfil extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(
-            'Daniel León Paulin',
-            style: TextStyle(fontSize: 25),
+            'Luis Ruiz Martínez',
+            style: TextStyle(fontSize: 20),
           ),
         ],
       ),
@@ -70,8 +75,8 @@ class PaginaPerfil extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(
-            'dleon29@alumnos.uaq.mx',
-            style: TextStyle(fontSize: 25),
+            'correoEjemplo@gmail.com',
+            style: TextStyle(fontSize: 20),
           ),
         ],
       ),
@@ -88,8 +93,8 @@ class PaginaPerfil extends StatelessWidget {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
           ),
           Text(
-            '442-145-2984',
-            style: TextStyle(fontSize: 25),
+            '442-125-7168',
+            style: TextStyle(fontSize: 20),
           ),
         ],
       ),

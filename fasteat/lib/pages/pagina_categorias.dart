@@ -7,18 +7,19 @@ class PaginaCategorias extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Clasificación'),
-          centerTitle: true,
-          backgroundColor: Colors.red,
-        ),
-        body: Stack(
-          children: [
-            _Body(),
-            //CardTable(),
-          ],
-        ),
-        bottomNavigationBar: MenuAbajo());
+      appBar: AppBar(
+        title: Text('Clasificación'),
+        centerTitle: true,
+        backgroundColor: Colors.red,
+      ),
+      body: Stack(
+        children: [
+          _Body(),
+          //CardTable(),
+        ],
+      ),
+      bottomNavigationBar: MenuAbajo()
+    );
   }
 }
 
@@ -28,7 +29,9 @@ class _Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Column(
-        children: [CategoriasPlatillos()],
+        children: [
+          CategoriasPlatillos()
+        ],
       ),
     );
   }

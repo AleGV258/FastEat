@@ -20,7 +20,7 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image(image: AssetImage('assets/Logo.png'), height: 250),
+            FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 250),
             SizedBox(height: 10.0),
             Text('Inicia Sesión',
                 style: TextStyle(color: Colors.red[300], fontSize: 25)),
@@ -128,8 +128,7 @@ class _LoginState extends State<Login> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text(
-                  'No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')
+              Text('No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')
             ],
           ),
           actions: <Widget>[

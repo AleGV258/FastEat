@@ -1,4 +1,5 @@
 import 'package:fasteat/pages/pagina_categorias.dart';
+import 'package:fasteat/pages/pagina_favoritos.dart';
 import 'package:fasteat/pages/pagina_perfil.dart';
 import 'package:fasteat/providers/gestor_provider.dart';
 import 'package:flutter/material.dart';
@@ -14,11 +15,11 @@ class HomePage extends StatelessWidget {
       case 0:
         return PaginaCategorias();
       case 1:
-        return PaginaCategorias(); //
+        return FavoritoSlider();
       case 2:
-      return PaginaPerfil();
+        return PaginaPerfil();
       case 3:
-      return PaginaCategorias(); //
+        return PaginaCategorias(); //
       default:
         return PaginaCategorias();
     }
