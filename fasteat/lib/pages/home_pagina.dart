@@ -1,3 +1,4 @@
+import 'package:fasteat/pages/pagina_carrito.dart';
 import 'package:fasteat/pages/pagina_categorias.dart';
 import 'package:fasteat/pages/pagina_favoritos.dart';
 import 'package:fasteat/pages/pagina_perfil.dart';
@@ -19,7 +20,7 @@ class HomePage extends StatelessWidget {
       case 2:
         return PaginaPerfil();
       case 3:
-        return PaginaCategorias(); //
+        return PaginaCarrito(); //
       default:
         return PaginaCategorias();
     }

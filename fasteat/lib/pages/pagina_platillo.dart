@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 
 class PaginaPlatillo extends StatelessWidget {
   final String nombrePlatillo;
-  const PaginaPlatillo({Key? key, required this.nombrePlatillo}): super(key: key);
+  const PaginaPlatillo({Key? key, required this.nombrePlatillo})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +25,25 @@ class PaginaPlatillo extends StatelessWidget {
           Container(
             alignment: Alignment.bottomCenter,
             child: ElevatedButton(
-              onPressed: () {
-                print('dsa' + this.nombrePlatillo);
-                //Aqui agrega a carrito la compra
-              },
+              onPressed: () => showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                  title: const Text(
+                    'Platillo Agregado',
+                    textAlign: TextAlign.center,
+                  ),
+                  content: const Text(
+                    'Se agregó el platillo al carrito de compras.',
+                    textAlign: TextAlign.center,
+                  ),
+                  actions: <Widget>[
+                    TextButton(
+                      onPressed: () => Navigator.pop(context, 'OK'),
+                      child: const Text('OK'),
+                    ),
+                  ],
+                ),
+              ),
               child: Text('Agregar al Carrito'),
               style: ElevatedButton.styleFrom(
                 textStyle: TextStyle(fontSize: 30),

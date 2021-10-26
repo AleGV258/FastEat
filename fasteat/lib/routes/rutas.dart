@@ -1,4 +1,5 @@
 import 'package:fasteat/pages/home_pagina.dart';
+import 'package:fasteat/pages/pagina_carrito.dart';
 import 'package:fasteat/pages/pagina_platillo.dart';
 import 'package:fasteat/pages/pagina_platillos_categoria.dart';
 import 'package:fasteat/pages/pagina_restaurante.dart';
@@ -16,7 +17,10 @@ Map<String, WidgetBuilder> getRoutes() {
     'login': (BuildContext context) => Login(),
     'registro': (BuildContext context) => Registro(),
     'platillosCategoria': (BuildContext context) => PaginaPlatillosXCategoria(),
-    'platillo': (BuildContext context) => PaginaPlatillo(nombrePlatillo: 'Nombres',),
+    'platillo': (BuildContext context) => PaginaPlatillo(
+          nombrePlatillo: 'Nombres',
+        ),
     'restaurante': (BuildContext context) => PaginaRestaurante(),
+    'carrito': (BuildContext context) => PaginaCarrito(),
   };
 }
