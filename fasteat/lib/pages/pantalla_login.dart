@@ -1,7 +1,4 @@
-/* CHECAR */
-//Revisar que funcione con una base de datos, si se puede
-
-import 'package:card_swiper/card_swiper.dart';
+//import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatefulWidget {
@@ -15,34 +12,39 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 250),
-            SizedBox(height: 10.0),
-            Text('Inicia Sesión',
-                style: TextStyle(color: Colors.red[300], fontSize: 25)),
-            SizedBox(height: 10.0),
-            _usuario(),
-            SizedBox(height: 15.0),
-            _contrasena(),
-            SizedBox(height: 20.0),
-            _iniciarSesion(context),
-            SizedBox(height: 15.0),
-            GestureDetector(
-              child: Text('¡No tienes cuenta, crea una!',
-                  style: TextStyle(
-                      decoration: TextDecoration.underline,
-                      color: Colors.orange[700],
-                      fontSize: 15)),
-              onTap: () {
-                Navigator.of(context).pushNamed('registro');
-              },
-            ),
-            SizedBox(height: 15.0),
-          ],
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              FadeInImage(
+                  placeholder: AssetImage('assets/loading.gif'),
+                  image: AssetImage('assets/Logo.png'),
+                  height: 250),
+              SizedBox(height: 10.0),
+              Text('Inicia Sesión',
+                  style: TextStyle(color: Colors.red[300], fontSize: 25)),
+              SizedBox(height: 10.0),
+              _usuario(),
+              SizedBox(height: 15.0),
+              _contrasena(),
+              SizedBox(height: 20.0),
+              _iniciarSesion(context),
+              SizedBox(height: 15.0),
+              GestureDetector(
+                child: Text('¡No tienes cuenta, crea una!',
+                    style: TextStyle(
+                        decoration: TextDecoration.underline,
+                        color: Colors.orange[700],
+                        fontSize: 15)),
+                onTap: () {
+                  Navigator.of(context).pushNamed('registro');
+                },
+              ),
+            ],
+          ),
         ),
       ),
     );
@@ -128,7 +130,8 @@ class _LoginState extends State<Login> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              Text('No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')
+              Text(
+                  'No se ha podido ingresar correctamente, rellene todos los campos del login e intentelo nuevamente.')
             ],
           ),
           actions: <Widget>[

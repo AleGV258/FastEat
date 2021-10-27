@@ -14,7 +14,6 @@ class PaginaPlatillosXCategoria extends StatelessWidget {
       body: Stack(
         children: [
           _Body(),
-          //CardTable(),
         ],
       ),
     );

@@ -1,0 +1,33 @@
+{
+    "nombreApp" : "fasteat",
+    "rutas" : [
+        {
+            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "name" : "hamburguesas",
+            "restaurante": "Burger King",
+            "precio": "$50.00",
+            "texto": "Hamburguesas"
+        },
+        {
+            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "name" : "papas",
+            "restaurante": "McDonalds",
+            "precio": "$35.00",
+            "texto": "Papas"
+        },
+        {
+            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "name" : "tacos",
+            "restaurante": "Tacos a la Esquina",
+            "precio": "$15.00",
+            "texto": "Tacos"
+        },
+        {
+            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "name" : "gorditas",
+            "restaurante": "Garnachitas",
+            "precio": "$20.00",
+            "texto": "Gorditas"
+        }
+    ]
+}

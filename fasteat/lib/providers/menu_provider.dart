@@ -15,4 +15,5 @@ class _GetFavoritos {
     return opciones;
   }
 }
+
 final fav = new _GetFavoritos(); //la convierte a publica la clase

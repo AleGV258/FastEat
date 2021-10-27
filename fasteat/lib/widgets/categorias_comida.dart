@@ -55,18 +55,6 @@ class _CategoriasPlatillosState extends State<CategoriasPlatillos> {
       ),
     );
   }
-
-  Widget _categorias() {
-    return FutureBuilder(
-      future: categorias.cargarData(),
-      initialData: [],
-      builder: (BuildContext context, AsyncSnapshot snapshot) {
-        return Table(
-            //children: _categoria(snapshot.data, context),
-            );
-      },
-    );
-  }
 }
 
 class _Categoria extends StatelessWidget {

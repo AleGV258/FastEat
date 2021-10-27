@@ -2,7 +2,9 @@ import 'package:fasteat/widgets/restaurante.dart';
 import 'package:flutter/material.dart';
 
 class PaginaRestaurante extends StatelessWidget {
-  const PaginaRestaurante({Key? key,}) : super(key: key);
+  const PaginaRestaurante({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(

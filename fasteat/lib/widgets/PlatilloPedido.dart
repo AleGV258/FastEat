@@ -48,7 +48,30 @@ class _Platillo extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SizedBox(width: 10),
+        SizedBox(width: 6),
+        InkWell(
+          onTap: () => showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+              title: const Text(
+                'Platillo Eliminado',
+                textAlign: TextAlign.center,
+              ),
+              content: const Text(
+                'El platillo se a eliminado de tu carrito de compras.',
+                textAlign: TextAlign.center,
+              ),
+              actions: <Widget>[
+                TextButton(
+                  onPressed: () => Navigator.pop(context, 'OK'),
+                  child: const Text('OK'),
+                ),
+              ],
+            ),
+          ),
+          child: Icon(Icons.delete),
+        ),
+        SizedBox(width: 6),
         Container(
           width: 90,
           margin: EdgeInsets.all(15),
@@ -62,7 +85,7 @@ class _Platillo extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        SizedBox(width: 15),
+        SizedBox(width: 7),
         Container(
           width: 150,
           child: Text(
@@ -72,7 +95,7 @@ class _Platillo extends StatelessWidget {
             textAlign: TextAlign.left,
           ),
         ),
-        SizedBox(width: 15),
+        SizedBox(width: 7),
         Text(
           '\$ ' '$precio',
           style: TextStyle(

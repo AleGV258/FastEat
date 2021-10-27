@@ -1,6 +1,4 @@
-import 'dart:typed_data';
-
-import 'package:fasteat/widgets/comentarios.dart';
+//import 'dart:typed_data';
 import 'package:flutter/material.dart';
 
 class Restaurante extends StatelessWidget {
@@ -41,7 +39,9 @@ class Restaurante extends StatelessWidget {
 }
 
 class seccionBotones extends StatelessWidget {
-  const seccionBotones({Key? key,}) : super(key: key);
+  const seccionBotones({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -62,7 +62,9 @@ class seccionBotones extends StatelessWidget {
 }
 
 class titulo extends StatelessWidget {
-  const titulo({Key? key,}) : super(key: key);
+  const titulo({
+    Key? key,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(

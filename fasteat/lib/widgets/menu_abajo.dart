@@ -12,9 +12,6 @@ class MenuAbajo extends StatelessWidget {
     final index = gestorProvider.opcionSeleccionada;
     return BottomNavigationBar(
       onTap: (int i) => gestorProvider.opcionSeleccionada = i,
-      // elevation: 0,
-      // showSelectedLabels: true,
-      // showUnselectedLabels: false,
       selectedItemColor: Colors.red,
       backgroundColor: Colors.white,
       unselectedItemColor: Colors.orange,

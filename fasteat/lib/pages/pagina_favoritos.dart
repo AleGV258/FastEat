@@ -1,9 +1,9 @@
 import 'package:fasteat/models/favorito_model.dart';
-import 'package:fasteat/widgets/Slider.dart';
+//simport 'package:fasteat/widgets/Slider.dart';
 import 'package:fasteat/widgets/card_swiper.dart';
 import 'package:fasteat/widgets/menu_abajo.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 class FavoritoSlider extends StatelessWidget {
   @override

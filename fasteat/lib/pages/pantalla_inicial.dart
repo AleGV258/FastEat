@@ -67,39 +67,48 @@ class Fondo extends StatelessWidget {
       case 0:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio0.png'),
+            fit: BoxFit.cover);
       case 1:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio1.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio1.png'),
+            fit: BoxFit.cover);
       case 2:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio2.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio2.png'),
+            fit: BoxFit.cover);
       case 3:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio3.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio3.png'),
+            fit: BoxFit.cover);
       case 4:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio4.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio4.png'),
+            fit: BoxFit.cover);
       case 5:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio5.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio5.png'),
+            fit: BoxFit.cover);
       case 6:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio6.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio6.png'),
+            fit: BoxFit.cover);
       case 7:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio7.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio7.png'),
+            fit: BoxFit.cover);
       default:
         return FadeInImage(
             placeholder: AssetImage('assets/loading.gif'),
-            image: AssetImage('assets/pantallaInicio0.png'), fit: BoxFit.cover);
+            image: AssetImage('assets/pantallaInicio0.png'),
+            fit: BoxFit.cover);
     }
   }
 }
@@ -115,7 +124,10 @@ class Contenido extends StatelessWidget {
         children: [
           SizedBox(height: 30),
           Expanded(child: Container()), //Separar
-          FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 300),
+          FadeInImage(
+              placeholder: AssetImage('assets/loading.gif'),
+              image: AssetImage('assets/Logo.png'),
+              height: 300),
           Expanded(child: Container()), //Separar
           Icon(Icons.keyboard_arrow_down, size: 100, color: Colors.white),
         ],

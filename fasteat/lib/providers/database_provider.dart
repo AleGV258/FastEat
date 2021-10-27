@@ -1,6 +1,3 @@
-/* CHECAR */
-//Checar esta pagina ya que no funciona correctamente
-
 import 'dart:io';
 import 'package:fasteat/models/favorito_model.dart';
 import 'package:fasteat/models/usuario_model.dart';
@@ -14,7 +11,7 @@ class DBProvider {
   DBProvider._();
 
   Future get database async {
-    if(_database != null) return _database;
+    if (_database != null) return _database;
     _database = await initDB();
     return _database;
   }
@@ -26,7 +23,7 @@ class DBProvider {
     return await openDatabase(
       path,
       version: 3,
-      onOpen: (db){},
+      onOpen: (db) {},
       onCreate: (Database db, int version) async {
         await db.execute('''
         CREATE TABLE Usuarios(
@@ -67,12 +64,13 @@ class DBProvider {
   Future addFavorito(Favorito nuevoFavorito) async {
     final db = await database;
     final res = await db.insert('Favoritos', nuevoFavorito.toMap());
-    return res; 
+    return res;
   }
 
   Future deleteFavorito(int id) async {
     final db = await database;
-    final res = await db.delete('Favoritos', where:'idFavorito=?', whereArgs:[id]);
+    final res =
+        await db.delete('Favoritos', where: 'idFavorito=?', whereArgs: [id]);
     return res;
   }
 
@@ -85,13 +83,12 @@ class DBProvider {
   Future addUsuario(Usuario nuevoUsuario) async {
     final db = await database;
     final res = await db.insert('Usuarios', nuevoUsuario.toMap());
-    return res; 
+    return res;
   }
 
   Future deleteUsuario(int id) async {
     final db = await database;
-    final res = await db.delete('Usuarios', where:'id=?', whereArgs:[id]);
+    final res = await db.delete('Usuarios', where: 'id=?', whereArgs: [id]);
     return res;
   }
-
 }

@@ -16,12 +16,10 @@ class PaginaPerfil extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            // SizedBox(height: 20.0),
-            // Text('Perfil',
-            //     style: TextStyle(color: Colors.red[300], fontSize: 29, fontWeight: FontWeight.bold)),
             SizedBox(height: 20.0),
             CircleAvatar(
-              backgroundImage: NetworkImage('http://assets.stickpng.com/thumbs/585e4bcdcb11b227491c3396.png'),
+              backgroundImage: NetworkImage(
+                  'http://assets.stickpng.com/thumbs/585e4bcdcb11b227491c3396.png'),
               radius: 90,
             ),
             SizedBox(height: 17.0),

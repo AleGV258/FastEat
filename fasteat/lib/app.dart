@@ -1,4 +1,4 @@
-import 'package:fasteat/pages/pagina_categorias.dart';
+//import 'package:fasteat/pages/pagina_categorias.dart';
 import 'package:fasteat/providers/gestor_provider.dart';
 import 'package:fasteat/routes/rutas.dart';
 import 'package:flutter/material.dart';

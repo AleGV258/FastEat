@@ -15,7 +15,20 @@ class Platillo extends StatelessWidget {
             ),
           ),
           titulo(),
-          seccionBotones(),
+          SeccionBotones(),
+          Container(
+            margin: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: InkWell(
+              onTap: () {
+                Navigator.of(context).pushNamed('restaurante');
+              },
+              child: Text(
+                'Restaurante Guaquería',
+                textAlign: TextAlign.justify,
+                style: TextStyle(fontSize: 25, color: Colors.red),
+              ),
+            ),
+          ),
           Container(
             margin: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: Text(
@@ -31,10 +44,6 @@ class Platillo extends StatelessWidget {
             child: Text(
                 'Nuestra jugosa hamburguesa Angus cubierta con crujientes tiras de cebolla y blue cheese, bañados con salsa BBQ, acompañada de ensalada de col tipo Baja.',
                 textAlign: TextAlign.justify),
-            // decoration: BoxDecoration(
-            //   borderRadius: BorderRadius.circular(10),
-            //   border: Border.all(color: Colors.grey),
-            // ),
           ),
           comentarios(),
           Comentarios(),
@@ -44,8 +53,8 @@ class Platillo extends StatelessWidget {
   }
 }
 
-class seccionBotones extends StatelessWidget {
-  const seccionBotones({
+class SeccionBotones extends StatelessWidget {
+  const SeccionBotones({
     Key? key,
   }) : super(key: key);
 
@@ -56,8 +65,51 @@ class seccionBotones extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          BotonPersonalizado(icon: Icons.star, texto: 'Calificar'),
-          BotonPersonalizado(icon: Icons.favorite, texto: 'Agregar a favorito'),
+          InkWell(
+            onTap: () => showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text(
+                  'Platillo Calificado',
+                  textAlign: TextAlign.center,
+                ),
+                content: const Text(
+                  'El platillo se a calificado.',
+                  textAlign: TextAlign.center,
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'OK'),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            ),
+            child: BotonPersonalizado(icon: Icons.star, texto: 'Calificar'),
+          ),
+          InkWell(
+            onTap: () => showDialog<String>(
+              context: context,
+              builder: (BuildContext context) => AlertDialog(
+                title: const Text(
+                  'Platillo Agregado a Favoritos',
+                  textAlign: TextAlign.center,
+                ),
+                content: const Text(
+                  'El platillo se a agregado a tus favoritos.',
+                  textAlign: TextAlign.center,
+                ),
+                actions: <Widget>[
+                  TextButton(
+                    onPressed: () => Navigator.pop(context, 'OK'),
+                    child: const Text('OK'),
+                  ),
+                ],
+              ),
+            ),
+            child: BotonPersonalizado(
+                icon: Icons.favorite, texto: 'Agregar a favorito'),
+          ),
         ],
       ),
     );
@@ -98,7 +150,6 @@ class titulo extends StatelessWidget {
                 'Hamburguesa',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
               ),
-              //Text('Precio', style: TextStyle(fontSize: 25)),
             ],
           ),
           Expanded(child: Container(height: 10)),
@@ -129,7 +180,6 @@ class comentarios extends StatelessWidget {
               ),
             ),
           ),
-          //Aqui van los comentarios
         ],
       ),
     );

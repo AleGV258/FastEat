@@ -17,14 +17,14 @@ class Usuario {
   int numeroTel;
 
   factory Usuario.fromMap(Map<String, dynamic> json) => new Usuario(
-    id: json['id'],
-    usuario: json['usuario'],
-    correo: json['correo'],
-    contrasena: json['contrasena'],
-    numeroTel: json['numeroTel'],
-  );
+        id: json['id'],
+        usuario: json['usuario'],
+        correo: json['correo'],
+        contrasena: json['contrasena'],
+        numeroTel: json['numeroTel'],
+      );
 
-  Map <String, dynamic> toMap(){
+  Map<String, dynamic> toMap() {
     return {
       'id': id,
       'usuario': usuario,

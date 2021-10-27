@@ -1,10 +1,7 @@
-/* CHECAR */
-//Revisar para que funcione con una base de datos, si se puede
-
 import 'package:fasteat/models/usuario_model.dart';
 import 'package:flutter/material.dart';
 import 'package:fasteat/providers/database_provider.dart';
-import 'package:provider/provider.dart';
+//import 'package:provider/provider.dart';
 
 class Registro extends StatefulWidget {
   @override
@@ -19,36 +16,47 @@ class _RegistroState extends State<Registro> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(height: 15.0),
-            FadeInImage(placeholder: AssetImage('assets/loading.gif'), image: AssetImage('assets/Logo.png'), height: 100),
-            SizedBox(height: 10.0),
-            Text('¡Bienvenido!', style: TextStyle(color: Colors.black, fontSize: 30)),
-            SizedBox(height: 10.0),
-            Text('Registrate', style: TextStyle(color: Colors.red[300], fontSize: 25)),
-            SizedBox(height: 10.0),
-            _usuario(),
-            SizedBox(height: 15.0),
-            _correo(),
-            SizedBox(height: 15.0),
-            _telefono(),
-            SizedBox(height: 15.0),
-            _contrasena(),
-            SizedBox(height: 20.0),
-            _registrarse(context),
-            SizedBox(height: 15.0),
-            GestureDetector(
-              child: Text('¡Ya tienes cuenta, inicia sesión!', style: TextStyle(decoration: TextDecoration.underline, color: Colors.orange[700], fontSize: 15)),
-              onTap: () {
-                Navigator.of(context).pushNamed('login');
-              }
-            ),
-            SizedBox(height: 15.0),
-          ],
+      resizeToAvoidBottomInset: false,
+      body: SingleChildScrollView(
+        child: Container(
+          color: Colors.white,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(height: 15.0),
+              FadeInImage(
+                  placeholder: AssetImage('assets/loading.gif'),
+                  image: AssetImage('assets/Logo.png'),
+                  height: 100),
+              SizedBox(height: 10.0),
+              Text('¡Bienvenido!',
+                  style: TextStyle(color: Colors.black, fontSize: 30)),
+              SizedBox(height: 10.0),
+              Text('Registrate',
+                  style: TextStyle(color: Colors.red[300], fontSize: 25)),
+              SizedBox(height: 10.0),
+              _usuario(),
+              SizedBox(height: 15.0),
+              _correo(),
+              SizedBox(height: 15.0),
+              _telefono(),
+              SizedBox(height: 15.0),
+              _contrasena(),
+              SizedBox(height: 20.0),
+              _registrarse(context),
+              SizedBox(height: 15.0),
+              GestureDetector(
+                  child: Text('¡Ya tienes cuenta, inicia sesión!',
+                      style: TextStyle(
+                          decoration: TextDecoration.underline,
+                          color: Colors.orange[700],
+                          fontSize: 15)),
+                  onTap: () {
+                    Navigator.of(context).pushNamed('login');
+                  }),
+              SizedBox(height: 15.0),
+            ],
+          ),
         ),
       ),
     );
@@ -144,15 +152,23 @@ class _RegistroState extends State<Registro> {
     );
   }
 
-  Widget _registrarse(BuildContext context){
+  Widget _registrarse(BuildContext context) {
     return ElevatedButton(
       onPressed: () async {
-        if(usuarioNew != '' && correoNew != '' && telefonoNew != 0 && contrasenaNew != ''){
-          await DBProvider.db.addUsuario(Usuario(id: null, usuario: usuarioNew, correo: correoNew, numeroTel: telefonoNew, contrasena: contrasenaNew));
+        if (usuarioNew != '' &&
+            correoNew != '' &&
+            telefonoNew != 0 &&
+            contrasenaNew != '') {
+          await DBProvider.db.addUsuario(Usuario(
+              id: null,
+              usuario: usuarioNew,
+              correo: correoNew,
+              numeroTel: telefonoNew,
+              contrasena: contrasenaNew));
           // Provider.of<DBProvider>(context, listen: false).addUsuario(Usuario(id: null, usuario: usuarioNew, correo: correoNew, numeroTel: telefonoNew, contrasena: contrasenaNew));
           print(await DBProvider.db.getAllScansUsuario());
           _mostrarAlertaConfirmacion(context);
-        }else{
+        } else {
           _mostrarAlerta(context);
         }
       },
@@ -175,11 +191,14 @@ class _RegistroState extends State<Registro> {
       builder: (context) {
         return AlertDialog(
           shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           title: Text('Error de Registro'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[Text('No se ha podido registrar, rellene todos los campos del registro e intentelo nuevamente.')],
+            children: <Widget>[
+              Text(
+                  'No se ha podido registrar, rellene todos los campos del registro e intentelo nuevamente.')
+            ],
           ),
           actions: <Widget>[
             TextButton(
@@ -199,11 +218,13 @@ class _RegistroState extends State<Registro> {
       builder: (context) {
         return AlertDialog(
           shape:
-            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
           title: Text('Registro Correcto'),
           content: Column(
             mainAxisSize: MainAxisSize.min,
-            children: <Widget>[Text('Su usuario ha sido registrado correctamente.')],
+            children: <Widget>[
+              Text('Su usuario ha sido registrado correctamente.')
+            ],
           ),
           actions: <Widget>[
             TextButton(

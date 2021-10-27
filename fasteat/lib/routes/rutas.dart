@@ -10,16 +10,13 @@ import 'package:flutter/material.dart';
 
 Map<String, WidgetBuilder> getRoutes() {
   return <String, WidgetBuilder>{
-    //'/': (BuildContext context) => PaginaCategorias(),
     '/': (BuildContext context) => PantallaInicial(),
     'home': (BuildContext context) => HomePage(),
     'inicial': (BuildContext context) => PantallaInicial(),
     'login': (BuildContext context) => Login(),
     'registro': (BuildContext context) => Registro(),
     'platillosCategoria': (BuildContext context) => PaginaPlatillosXCategoria(),
-    'platillo': (BuildContext context) => PaginaPlatillo(
-          nombrePlatillo: 'Nombres',
-        ),
+    'platillo': (BuildContext context) => PaginaPlatillo(),
     'restaurante': (BuildContext context) => PaginaRestaurante(),
     'carrito': (BuildContext context) => PaginaCarrito(),
   };

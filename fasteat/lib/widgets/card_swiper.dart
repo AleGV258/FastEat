@@ -38,16 +38,17 @@ class CardSwiper extends StatelessWidget {
     );
   }
 
-  Widget _imagen (){
-      return FutureBuilder(
-        future: fav.cargarData(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) => snapshot.data?.forEach((op){
-            return FadeInImage(
-                placeholder: AssetImage('assets/loading.gif'),
-                image: NetworkImage(op['imagen']),
-                fit: BoxFit.cover,
-            );
-          }),
-      );
-    }
+  Widget _imagen() {
+    return FutureBuilder(
+      future: fav.cargarData(),
+      builder: (BuildContext context, AsyncSnapshot snapshot) =>
+          snapshot.data?.forEach((op) {
+        return FadeInImage(
+          placeholder: AssetImage('assets/loading.gif'),
+          image: NetworkImage(op['imagen']),
+          fit: BoxFit.cover,
+        );
+      }),
+    );
+  }
 }
