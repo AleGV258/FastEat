@@ -15,10 +15,9 @@ class FavoritoSlider extends StatelessWidget {
             CardSwiper(favorito: [
               Favorito(idFavorito: 1, platillo: "Hamburguesas", restaurante: "restaurante1"),
               Favorito(idFavorito: 2, platillo: "Papas", restaurante: "restaurante2"),
-              Favorito(idFavorito: 3, platillo: "Tacoos", restaurante: "restaurante3"),
+              Favorito(idFavorito: 3, platillo: "Tacos", restaurante: "restaurante3"),
               Favorito(idFavorito: 4, platillo: "Gorditas", restaurante: "restaurante4"),
             ]),
-            SliderOpt(),
           ],
         ),
       ),
