@@ -71,7 +71,7 @@ class _Platillo extends StatelessWidget {
           ),
           child: Icon(Icons.delete),
         ),
-        SizedBox(width: 6),
+        SizedBox(width: 5),
         Container(
           width: 90,
           margin: EdgeInsets.all(15),
@@ -85,21 +85,21 @@ class _Platillo extends StatelessWidget {
             borderRadius: BorderRadius.circular(10),
           ),
         ),
-        SizedBox(width: 7),
+        SizedBox(width: 5),
         Container(
           width: 150,
           child: Text(
             this.texto,
             style: TextStyle(
-                color: Colors.black, fontSize: 20, fontWeight: FontWeight.bold),
+                color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
             textAlign: TextAlign.left,
           ),
         ),
-        SizedBox(width: 7),
+        SizedBox(width: 5),
         Text(
           '\$ ' '$precio',
           style: TextStyle(
-              color: this.color, fontSize: 20, fontWeight: FontWeight.bold),
+              color: this.color, fontSize: 16, fontWeight: FontWeight.bold),
           textAlign: TextAlign.right,
         ),
       ],

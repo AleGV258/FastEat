@@ -2,28 +2,28 @@
     "nombreApp" : "fasteat",
     "rutas" : [
         {
-            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "imagen" : "https://foodandtravel.mx/wp-content/uploads/2021/05/Hamburguesas.jpg",
             "name" : "hamburguesas",
             "restaurante": "Burger King",
             "precio": "$50.00",
             "texto": "Hamburguesas"
         },
         {
-            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "imagen" : "https://cdn2.cocinadelirante.com/sites/default/files/styles/gallerie/public/images/2021/01/papas-en-freidora-de-aire.jpg",
             "name" : "papas",
             "restaurante": "McDonalds",
             "precio": "$35.00",
             "texto": "Papas"
         },
         {
-            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "imagen" : "https://www.culinariamexicana.com.mx/wp-content/uploads/2021/03/tacos-tipicos-scaled.jpg",
             "name" : "tacos",
             "restaurante": "Tacos a la Esquina",
             "precio": "$15.00",
             "texto": "Tacos"
         },
         {
-            "imagen" : "https://media.gq.com.mx/photos/5ced746cd09b9ae227169147/16:9/w_2560%2Cc_limit/GettyImages-688974829.jpg",
+            "imagen" : "https://quehagodecomerhoy.com/wp-content/uploads/2018/03/Gorditas-de-Frijol.png",
             "name" : "gorditas",
             "restaurante": "Garnachitas",
             "precio": "$20.00",
