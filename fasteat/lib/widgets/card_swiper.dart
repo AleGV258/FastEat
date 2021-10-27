@@ -1,5 +1,6 @@
 import 'package:card_swiper/card_swiper.dart';
 import 'package:fasteat/models/favorito_model.dart';
+import 'package:fasteat/providers/menu_provider.dart';
 import 'package:flutter/material.dart';
 
 class CardSwiper extends StatelessWidget {
@@ -29,15 +30,24 @@ class CardSwiper extends StatelessWidget {
           return GestureDetector(
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
-              child: FadeInImage(
-                placeholder: AssetImage('assets/loading.gif'),
-                image: NetworkImage('https://via.placeholder.com/300x400'),
-                fit: BoxFit.cover,
-              ),
+              child: _imagen(),
             ),
           );
         },
       ),
     );
   }
+
+  Widget _imagen (){
+      return FutureBuilder(
+        future: fav.cargarData(),
+        builder: (BuildContext context, AsyncSnapshot snapshot) => snapshot.data?.forEach((op){
+            return FadeInImage(
+                placeholder: AssetImage('assets/loading.gif'),
+                image: NetworkImage(op['imagen']),
+                fit: BoxFit.cover,
+            );
+          }),
+      );
+    }
 }
